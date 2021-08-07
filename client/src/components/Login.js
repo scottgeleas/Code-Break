@@ -7,7 +7,7 @@ export default function Login() {
         <form>
         <div class="mb-3">
           <label for="loginUserName" class="form-label">Username</label>
-          <input type="text" class="form-control" id="loginUserName" placeholder="username" />
+          <input type="text" class="form-control" id="loginUserName" placeholder="programmer123" />
         </div>
         <div class="mb-3">
           <label for="loginPassword" class="form-label">Password</label>
