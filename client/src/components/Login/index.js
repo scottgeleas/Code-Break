@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './css/index.css';
 
 
 export default function Login() {
     return (
-        
+        <div className='loginContainer'>
         <form>
         <div class="mb-3">
           <label for="loginUserName" class="form-label">Username</label>
@@ -16,6 +17,7 @@ export default function Login() {
         <button type="submit" class="btn btn-primary">Login</button>
         <button type="button" class="btn btn-primary">Signup</button>
       </form>
+      </div>
     )
 }
 

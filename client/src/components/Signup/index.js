@@ -1,8 +1,9 @@
 import React from 'react';
+import './css/index.css';
 
 export default function Signup() {
     return (
-        <div>
+        <div className="signupContainer">
             <form>
                 <div class='mb-3'>
                     <label for='signupUsername' class='form-label'>
