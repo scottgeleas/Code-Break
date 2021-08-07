@@ -4,15 +4,13 @@ const { User, Snippet, Comment } = require('../models');
 
 const resolvers = {
     Query: {
-        users: async () => {
-            return User.find({});
-        },
+        users: async () => User.find({}),
         // snippets: async () => {
 
         // },
         // comments: async () => {
 
-        // },
+    // },
     },
 
     Mutation: {
@@ -21,7 +19,7 @@ const resolvers = {
             return user;
         },
     // createSnippet:
-     // createComment:
+    // createComment:
     },
 };
 
