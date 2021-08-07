@@ -1,5 +1,5 @@
 import React from 'react';
-import code from '../../src/images/code.jpg';
+import code from '../Banner/images/code.jpg';
 
 
 
