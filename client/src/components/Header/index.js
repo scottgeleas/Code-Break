@@ -1,10 +1,9 @@
 import React from 'react';
-import Nav from '../Nav/index'
+
 export default function Header() {
     return (
-        <div>
+        <div className='container'>
             <h1>Code{`<br>`}</h1>
-           <Nav />
         </div>
     );
 }
