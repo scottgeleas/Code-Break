@@ -1,5 +1,5 @@
 import React from 'react';
-import moduleName from '../Nav'
+import Nav from '../Nav/index'
 export default function Header() {
     return (
         <div>
