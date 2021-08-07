@@ -12,7 +12,7 @@ export default function Signup() {
                         type='text'
                         class='form-control'
                         id='signupUsername'
-                        placeholder='username'
+                        placeholder='programmer123'
                     />
                 </div>
                 <div class='mb-3'>
@@ -34,7 +34,7 @@ export default function Signup() {
                         type='password'
                         class='form-control'
                         id='signupPassword'
-                        placeholder='password'
+                        placeholder='Never tell anyone your password'
                     />
                 </div>
                 <button type='submit' class='btn btn-primary'>
