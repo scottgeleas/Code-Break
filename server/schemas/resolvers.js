@@ -1,27 +1,27 @@
-//const { AuthenticationError } = require('apollo-server-express');
+// const { AuthenticationError } = require('apollo-server-express');
 const { User, Snippet, Comment } = require('../models');
-//const { signToken } = require('../utils/auth');
+// const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
         users: async () => {
-            return User.find({})
+            return User.find({});
         },
-        //snippets: async () => {
+        // snippets: async () => {
 
-        //},
-        //comments: async () => {
+        // },
+        // comments: async () => {
 
-        //},
+        // },
     },
 
     Mutation: {
         createUser: async (parent, args) => {
             const user = await User.create(args);
-            return user
+            return user;
         },
-        //createSnippet:
-        //createComment:
+    // createSnippet:
+     // createComment:
     },
 };
 
