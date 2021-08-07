@@ -1,13 +1,10 @@
 import React from 'react';
-
+import moduleName from '../Nav'
 export default function Header() {
     return (
         <div>
             <h1>Code{`<br>`}</h1>
-            <nav>
-                <a href=''>Homepage</a>
-                <a href=''>Dashboard</a>
-            </nav>
+           <Nav />
         </div>
     );
 }
