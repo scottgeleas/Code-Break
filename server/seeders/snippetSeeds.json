@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Automatic copyright year update",
+    "description": "This code can be used in website footers to update the copyright year automatically.",
+    "language": "JavaScript",
+    "author": "Tom Smith",
+    "privacy": "Public",
+    "date": "08-01-2021",
+    "code": "<p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Your Name All Rights Reserved</p>"
+  },
+  {
+    "title": "CSS Reset ",
+    "description": "This css reset aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "language": "CSS",
+    "author": "Tom Smith",
+    "privacy": "Public",
+    "date": "05-03-2021",
+    "code": "The code snippet goes here. Lacinia at quis risus sed vulputate odio. Arcu felis bibendum ut tristique. Elementum tempus egestas sed sed risus pretium quam vulputate. Purus sit amet luctus venenatis lectus magna fringilla urna. Aliquam sem fringilla ut morbi. At varius vel pharetra vel. Egestas congue quisque egestas diam in arcu cursus euismod. In eu mi bibendum neque egestas congue. Tristique et egestas quis ipsum suspendisse ultrices gravida dictum."
+  },
+  {
+    "title": "Moving particles for page background",
+    "description": "This background snippet adds movement and interest to web page backgrounds. Ultricies mi quis hendrerit dolor magna eget est. Massa enim nec dui nunc mattis enim. Imperdiet proin fermentum leo vel orci porta. Morbi blandit cursus risus at ultrices mi. ",
+    "language": "JavaScript",
+    "author": "Tom Smith",
+    "privacy": "Public",
+    "date": "08-01-2021",
+    "code": "The code snippet goes here. In hac habitasse platea dictumst quisque. Donec enim diam vulputate ut pharetra sit. Montes nascetur ridiculus mus mauris. Erat pellentesque adipiscing commodo elit at. Adipiscing diam donec adipiscing tristique risus nec feugiat in. Luctus accumsan tortor posuere ac ut. Quis auctor elit sed vulputate mi. Turpis massa sed elementum tempus egestas sed sed risus pretium. Nullam ac tortor vitae purus faucibus ornare."
+  },
+  {
+    "title": "HTML starter page",
+    "description": "A comprehensive html boilerplate that will kickstart a developer's project. Orci porta non pulvinar neque. Eros in cursus turpis massa tincidunt. Magna ac placerat vestibulum lectus. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum.",
+    "language": "HTML",
+    "author": "Alice Wu",
+    "privacy": "Public",
+    "date": "05-02-2021",
+    "code": "The code snippet goes here. Aliquam sem fringilla ut morbi. At varius vel pharetra vel. Egestas congue quisque egestas diam in arcu cursus euismod. In eu mi bibendum neque egestas congue. Tristique et egestas quis ipsum suspendisse ultrices gravida dictum. Orci porta non pulvinar neque. Eros in cursus turpis massa tincidunt. Magna ac placerat vestibulum lectus."
+  },
+  {
+    "title": "Video Landing Page Template",
+    "description": "This is the description2 ",
+    "language": "HTML, CSS, JavaScript",
+    "author": "Frances Brown",
+    "privacy": "Public",
+    "date": "07-18-2021",
+    "code": "The HTML, CSS, and JavaScript code snippets go here. Donec enim diam vulputate ut pharetra sit. Montes nascetur ridiculus mus mauris. Erat pellentesque adipiscing commodo elit at. Adipiscing diam donec adipiscing tristique risus nec feugiat in. Luctus accumsan tortor posuere ac ut. Quis auctor elit sed vulputate mi. Turpis massa sed elementum tempus egestas sed sed risus pretium. Nullam ac tortor vitae purus faucibus ornare. Vulputate ut pharetra sit amet aliquam id."
+  },
+  {
+    "title": "Animate.js",
+    "description": "This code is used to apply a CSS animation to an element. Source: Copyright 2021 Chris Ferdinandi, MIT License; https://gomakethings.com",
+    "language": "JavaScript",
+    "author": "Ronald Fromme",
+    "privacy": "Public",
+    "date": "10-19-2020",
+    "code": "The code snippet goes here. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "title": "Performance Test",
+    "description": "Write simple vanilla JS performance tests. Eget est lorem ipsum dolor sit amet consectetur adipiscing. Auctor eu augue ut lectus arcu bibendum at.",
+    "language": "JavaScript",
+    "author": "Marni Goole",
+    "privacy": "Public",
+    "date": "02-18-2020",
+    "code": "The code snippet goes here. Eleifend donec pretium vulputate sapien nec sagittis aliquam. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Amet risus nullam eget felis eget. Aenean pharetra magna ac placerat vestibulum. In hac habitasse platea dictumst quisque sagittis purus sit amet. Elementum curabitur vitae nunc sed velit dignissim sodales. Facilisi morbi tempus iaculis urna id volutpat. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam. Nulla at volutpat diam ut."
+  },
+  {
+    "title": "Basic Responsive CSS Boilerplate",
+    "description": "Styles designed to be a starting point, not a UI framework. Quick to start with zero compiling or installing necessary. Source: http://getskeleton.com",
+    "language": "CSS",
+    "author": "Pat Rebek",
+    "privacy": "Public",
+    "date": "05-28-2021",
+    "code": "Dictum non consectetur a erat nam at lectus. Porttitor rhoncus dolor purus non enim praesent. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Facilisis magna etiam tempor orci eu lobortis elementum nibh tellus. Congue eu consequat ac felis donec et odio pellentesque diam. Faucibus purus in massa tempor nec. Dignissim diam quis enim lobortis scelerisque fermentum. Aliquam ultrices sagittis orci a scelerisque purus semper. Lectus quam id leo in vitae turpis. Magna etiam tempor orci eu lobortis. Id velit ut tortor pretium viverra suspendisse potenti nullam ac. Sed nisi lacus sed viverra tellus in hac habitasse."
+  }
+]

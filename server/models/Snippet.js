@@ -1,9 +1,14 @@
 const { Schema, model } = require('mongoose');
 
-const snippetSchema = new Schema  ({
+const snippetSchema = new Schema({
     title: {
         type: String,
         required: true,
+    },
+    author: {
+        type: String,
+        required: true,
+        trim: true,
     },
     description: {
         type: String,
@@ -18,18 +23,18 @@ const snippetSchema = new Schema  ({
     },
     like: {
         type: Number,
-        default: 0,      
-    },    
+        default: 0,
+    },
     dislike: {
         type: Number,
-        default: 0,      
+        default: 0,
     },
     comment: [
         {
             type: Schema.Types.ObjectId,
-            ref: "Comment"
-        }
-    ],  
+            ref: 'Comment',
+        },
+    ],
     date: {
         type: Date,
         default: Date.now(),
@@ -41,6 +46,6 @@ const snippetSchema = new Schema  ({
 });
 
 const Snippet = model('Snippet',
-snippetSchema);
+    snippetSchema);
 
 module.exports = Snippet;

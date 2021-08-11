@@ -1,0 +1,37 @@
+[
+  {
+    "user_id": 1,
+    "username": "Tom Smith",
+    "email": "tsmith@email.com",
+    "password": "password01"
+  },
+  {
+    "user_id": 2,
+    "username": "Pat Rebek",
+    "email": "prebek@email.com",
+    "password": "password01"
+  },
+  {
+    "user_id": 3,
+    "username": "Alice Wu",
+    "email": "awu@email.com",
+    "password": "password01"
+  },
+  {
+    "user_id": 4,
+    "username": "Frances Brown",
+    "email": "fbrown@email.com",
+    "password": "password01"
+  },
+  {
+    "user_id": 5,
+    "username": "Ronald Fromme",
+    "email": "rfromme@email.com",
+    "password": "password01"
+  },
+ { "user_id": 6,
+    "username": "Marney Goole",
+    "email": "mgoole@email.com",
+    "password": "password01"
+  }
+]
