@@ -32,6 +32,13 @@ const typeDefs = gql`
         snippets: [Snippet]
         comments: [Comment]
     }
+
+    type Mutation {
+        createUser: User
+        createSnippet: Snippet
+        createComment: Comment
+    
+    }
 `;
 
 module.exports = typeDefs;

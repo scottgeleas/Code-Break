@@ -5,22 +5,24 @@ const { User, Snippet, Comment } = require('../models');
 const resolvers = {
     Query: {
         users: async () => User.find({}),
-        // snippets: async () => {
-
-        // },
-        // comments: async () => {
-
-    // },
+        snippets: async () => Snippet.find({}),
+        comments: async () => Comment.find({}),
     },
 
-    // Mutation: {
-    //     createUser: async (parent, args) => {
-    //         const user = await User.create(args);
-    //         return user;
-    //     },
-    // createSnippet:
-    // createComment:
-    // },
+    Mutation: {
+        createUser: async (parent, args) => {
+            const users = await User.create(args);
+            return users;
+        },
+        createSnippet: async (parent, args) => {
+            const snippets = await Snippet.create(args);
+            return snippets;
+        },
+        createComment: async (parent, args) => {
+            const comments = await Comment.create(args);
+            return comments;
+        },
+    },
 };
 
 module.exports = resolvers;
