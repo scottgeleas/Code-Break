@@ -1,10 +1,11 @@
 import React from 'react';
-import code from '../Banner/images/code.jpg';
+import './css/index.css';
+import banner from '../Banner/images/banner.jpg';
 
 export default function Banner() {
     return (
         <div>
-            <img id='projects' src={code} alt="coding" />
+            <img id='banner' src={banner} alt="banner" />
         </div>
     )
 }

@@ -1,5 +1,10 @@
 .loginContainer{
+    margin-top: 40px;
     max-width: 600px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.btn{
+    margin-right: 20px;
 }
