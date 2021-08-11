@@ -1,0 +1,35 @@
+.nav{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    }
+    
+    .footer-link{
+        color: black;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        padding: 0.5rem 16px;
+        height: 100%;
+    }
+    
+    .footer-link:hover {
+        color: black!important;
+        border-bottom: 1.5px solid gray;
+        transition: all 0.2s ease-out;
+      }
+
+      .footer-container {
+        margin-top: 400px;
+        padding: 4rem 0 2rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+      }
