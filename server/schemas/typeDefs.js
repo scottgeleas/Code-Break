@@ -5,13 +5,13 @@ const typeDefs = gql`
         _id: ID!
         username: String!
         password: String!
+        email: String!
         snippets: [Snippet]
     }
 
     type Snippet {
         _id: ID!
         title: String!
-        date: Date
         description: String
         language: String!
         code: String!
@@ -28,13 +28,9 @@ const typeDefs = gql`
     }
 
     type Query {
-        user: [User]
+        users: [User]
         snippets: [Snippet]
         comments: [Comment]
-    }
-
-    type Mustation {
-        createUser
     }
 `;
 
