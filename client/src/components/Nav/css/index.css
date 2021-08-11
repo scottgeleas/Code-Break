@@ -1,0 +1,26 @@
+.nav{
+height: 60px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 16px;
+position: sticky;
+top: 0;
+z-index: 999; 
+
+}
+
+.nav-link{
+    height: 40px;
+    color: black;
+    padding: 0.5rem;
+    height: 100%;
+    font-size: 18px;
+    padding-right: 10px;
+}
+
+.nav-link:hover {
+    color: black!important;
+    border-bottom: 1.5px solid gray;
+    transition: all 0.2s ease-out;
+  }
