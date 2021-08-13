@@ -1,4 +1,4 @@
-.nav{
+.navbar{
 height: 60px;
 display: flex;
 justify-content: center;
@@ -7,7 +7,6 @@ font-size: 16px;
 position: sticky;
 top: 0;
 z-index: 999; 
-
 }
 
 .nav-link{
@@ -17,6 +16,8 @@ z-index: 999;
     height: 100%;
     font-size: 18px;
     padding-right: 10px;
+    font-size: 20px!important;
+    color: black!important;
 }
 
 .nav-link:hover {
@@ -24,3 +25,6 @@ z-index: 999;
     border-bottom: 1.5px solid gray;
     transition: all 0.2s ease-out;
   }
+
+
+

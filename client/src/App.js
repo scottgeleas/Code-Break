@@ -5,6 +5,7 @@ import {
     createHttpLink,
 } from '@apollo/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/index';
@@ -25,31 +26,32 @@ const client = new ApolloClient({
 });
 
 function App() {
-    return (
-        <ApolloProvider client={client}>
-            <Router>
-                <div>
-                    <div className='pageHeader'>
-                        <Header />
-                        <Nav />
-                    </div>
-                    <Banner />
-                    <Switch>
-                        <Route path='/' exact>
-                            <h1>Homepage</h1>
-                        </Route>
-                        <Route path='/dashboard' exact>
-                            <h1>Dashboard</h1>
-                        </Route>
-                        <Route path='/signup' exact>
-                            <Signup />
-                        </Route>
-                        <Route path='/login' exact>
-                            <Login />
-                        </Route>
-                    </Switch>
+  return (
 
-                    <div className='mainContent'>
+    <ApolloProvider client={client}>
+      <Router>
+        <div>
+          <div className='pageHeader'>
+            <Header />
+            <Nav />
+            
+          </div>
+          <Banner />
+          <Switch>
+            <Route path='/' exact>
+              <h1>Homepage</h1>
+            </Route>
+            <Route path='/dashboard' exact>
+              <h1>Dashboard</h1>
+            </Route>
+            <Route path='/signup' exact>
+              <Signup />
+            </Route>
+            <Route path='/login' exact>
+              <Login />
+            </Route>
+          </Switch>
+          <div className='mainContent'>
                         <div className='container'>
                             <div className='row'>
 
@@ -64,12 +66,11 @@ function App() {
                             </div>
                         </div>
                     </div>
-
-                    <Footer />
-                </div>
-            </Router>
-        </ApolloProvider>
-    );
+          <Footer />
+        </div>
+      </Router>
+    </ApolloProvider>
+  );
 }
 
 export default App;
