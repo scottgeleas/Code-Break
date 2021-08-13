@@ -1,5 +1,6 @@
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/index';
@@ -27,6 +28,7 @@ function App() {
           <div className='pageHeader'>
             <Header />
             <Nav />
+            
           </div>
           <Banner />
           <Switch>
