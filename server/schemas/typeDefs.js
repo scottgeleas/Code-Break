@@ -9,6 +9,11 @@ const typeDefs = gql`
         snippets: [Snippet]
     }
 
+    type Auth {
+        token: ID!
+        user: User
+    }
+
     type Snippet {
         _id: ID!
         title: String!
@@ -34,10 +39,10 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        createUser: User
+        createUser(username: String!, email: String!, password: String!): Auth
+        loginUser(email: String!, password: String!): Auth
         createSnippet: Snippet
         createComment: Comment
-    
     }
 `;
 
