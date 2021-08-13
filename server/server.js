@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
-const db = require('./config/connection');
 const { ApolloServer } = require('apollo-server-express');
+const db = require('./config/connection');
 const { typeDefs, resolvers } = require('./schemas');
 
 const app = express();
@@ -27,9 +27,10 @@ const startApolloServer = async () => {
     });
 
     app.listen(PORT, () => {
+        // eslint-disable-next-line no-console
         console.log(`Server ready at http://localhost:${PORT}${server.graphqlPath}`);
     });
-}
+};
 
 db.once('open', () => {
     startApolloServer();
