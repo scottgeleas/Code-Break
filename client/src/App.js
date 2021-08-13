@@ -26,35 +26,32 @@ const client = new ApolloClient({
 });
 
 function App() {
-  return (
-
-    <ApolloProvider client={client}>
-      <Router>
-        <div>
-          <div className='pageHeader'>
-            <Header />
-            <Nav />
-            
-          </div>
-          <Banner />
-          <Switch>
-            <Route path='/' exact>
-              <h1>Homepage</h1>
-            </Route>
-            <Route path='/dashboard' exact>
-              <h1>Dashboard</h1>
-            </Route>
-            <Route path='/signup' exact>
-              <Signup />
-            </Route>
-            <Route path='/login' exact>
-              <Login />
-            </Route>
-          </Switch>
-          <div className='mainContent'>
+    return (
+        <ApolloProvider client={client}>
+            <Router>
+                <div>
+                    <div className='pageHeader'>
+                        <Header />
+                        <Nav />
+                    </div>
+                    <Banner />
+                    <Switch>
+                        <Route path='/' exact>
+                            <h1>Homepage</h1>
+                        </Route>
+                        <Route path='/dashboard' exact>
+                            <h1>Dashboard</h1>
+                        </Route>
+                        <Route path='/signup' exact>
+                            <Signup />
+                        </Route>
+                        <Route path='/login' exact>
+                            <Login />
+                        </Route>
+                    </Switch>
+                    <div className='mainContent'>
                         <div className='container'>
                             <div className='row'>
-
                                 <div className='col-3'>
                                     <Filter />
                                 </div>
@@ -62,15 +59,14 @@ function App() {
                                 <div className='col-9'>
                                     {/* Snippet Component here */}
                                 </div>
-
                             </div>
                         </div>
                     </div>
-          <Footer />
-        </div>
-      </Router>
-    </ApolloProvider>
-  );
+                    <Footer />
+                </div>
+            </Router>
+        </ApolloProvider>
+    );
 }
 
 export default App;
