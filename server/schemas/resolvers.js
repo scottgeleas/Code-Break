@@ -1,6 +1,6 @@
-// const { AuthenticationError } = require('apollo-server-express');
 const { User, Snippet, Comment } = require('../models');
-// const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
@@ -11,8 +11,40 @@ const resolvers = {
 
     Mutation: {
         createUser: async (parent, args) => {
-            const users = await User.create(args);
-            return users;
+            const user = await User.create(args);
+
+            if (!user) {
+                throw new AuthenticationError('Something is wrong! Can\'t create user.');
+            }
+
+            const token = signToken(user);
+
+            return {
+                token: token,
+                user: user,
+            }
+        },
+        loginUser: async (parent, args) => {
+            const user = await User.findOne({
+                email: args.email,
+            });
+
+            if (!user) {
+                throw new AuthenticationError('No user found with this email address.');
+            }
+
+            const isCorrectPassword = await user.isCorrectPassword(args.password);
+
+            if (!isCorrectPassword) {
+                throw new AuthenticationError('Incorrect password.');
+            }
+
+            const token = signToken(user);
+
+            return {
+                token: token,
+                user: user,
+            }
         },
         createSnippet: async (parent, args) => {
             const snippets = await Snippet.create(args);
