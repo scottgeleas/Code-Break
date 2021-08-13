@@ -1,74 +1,121 @@
 [
   {
+    "title": "Mini CSS Reset ",
+    "description": "This Mini CSS Reset focuses on the main CSS features like Divs, Tables and Forms as well as the most used CSS(HTML) elements. Source: http://www.vcarrer.com/2010/05/css-mini-reset.html",
+    "language": "CSS",
+    "author": "Tom Smith",
+    "privacy": "Public",
+    "date": "05-03-2021",
+    "like": 10,
+    "dislike": 1,
+    "code": "html, body, div, form, fieldset, legend, label\n{\n margin: 0;\n padding: 0; \n}\n\ntable\n{\n border-collapse: collapse;\n border-spacing: 0;\n}\n\nth, td\n{\n text-align: left;\n vertical-align: top;\n}\n\nh1, h2, h3, h4, h5, h6, th, td, caption { font-weight:normal; }\n\nimg { border: 0; }"
+  },
+  {
+    "title": "Display random quotes/comments/images",
+    "description": "This code can be used to display more than just random quotes. You can change the content of the quotes to whatever you want and have random images or text displayed anywhere on your site. Source: https://www.webhostingsecretrevealed.net/blog/featured-articles/15-cool-javascript-sample-snippets/",
+    "language": "JavaScript",
+    "author": "Tom Smith",
+    "privacy": "Private",
+    "date": "08-01-2021",
+    "code": "Head:\n\n<script type=\"text/javascript\">\n  writeRandomQuote = function () {\n    var quotes = new Array();\n    quotes[0] = \"Action is the real measure of intelligence.\";\n    quotes[1] = \"Baseball has the great advantage over cricket of being sooner ended.\";\n    quotes[2] = \"Every goal, every action, every thought, every feeling one experiences, whether it be consciously or unconsciously known, is an attempt to increase one's level of peace of mind.\";\n    quotes[3] = \"A good head and a good heart are always a formidable combination.\";\n    var rand = Math.floor(Math.random()*quotes.length);\n    document.write(quotes[rand]);\n  }\n  writeRandomQuote();\n</script>\n\nBody:\n\n<script type=\"text/javascript\">writeRandomQuote();</script>"
+  },
+  {
     "title": "Automatic copyright year update",
     "description": "This code can be used in website footers to update the copyright year automatically.",
     "language": "JavaScript",
     "author": "Tom Smith",
     "privacy": "Public",
     "date": "08-01-2021",
+    "like": 6,
+    "dislike": 0,
     "code": "<p>Copyright &copy; <script>document.write(new Date().getFullYear())</script> Your Name All Rights Reserved</p>"
   },
   {
-    "title": "CSS Reset ",
-    "description": "This css reset aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "language": "CSS",
-    "author": "Tom Smith",
-    "privacy": "Public",
-    "date": "05-03-2021",
-    "code": "The code snippet goes here. Lacinia at quis risus sed vulputate odio. Arcu felis bibendum ut tristique. Elementum tempus egestas sed sed risus pretium quam vulputate. Purus sit amet luctus venenatis lectus magna fringilla urna. Aliquam sem fringilla ut morbi. At varius vel pharetra vel. Egestas congue quisque egestas diam in arcu cursus euismod. In eu mi bibendum neque egestas congue. Tristique et egestas quis ipsum suspendisse ultrices gravida dictum."
-  },
-  {
-    "title": "Moving particles for page background",
-    "description": "This background snippet adds movement and interest to web page backgrounds. Ultricies mi quis hendrerit dolor magna eget est. Massa enim nec dui nunc mattis enim. Imperdiet proin fermentum leo vel orci porta. Morbi blandit cursus risus at ultrices mi. ",
-    "language": "JavaScript",
-    "author": "Tom Smith",
-    "privacy": "Public",
-    "date": "08-01-2021",
-    "code": "The code snippet goes here. In hac habitasse platea dictumst quisque. Donec enim diam vulputate ut pharetra sit. Montes nascetur ridiculus mus mauris. Erat pellentesque adipiscing commodo elit at. Adipiscing diam donec adipiscing tristique risus nec feugiat in. Luctus accumsan tortor posuere ac ut. Quis auctor elit sed vulputate mi. Turpis massa sed elementum tempus egestas sed sed risus pretium. Nullam ac tortor vitae purus faucibus ornare."
-  },
-  {
     "title": "HTML starter page",
-    "description": "A comprehensive html boilerplate that will kickstart a developer's project. Orci porta non pulvinar neque. Eros in cursus turpis massa tincidunt. Magna ac placerat vestibulum lectus. Nunc eget lorem dolor sed viverra ipsum nunc aliquet bibendum.",
+    "description": "Get a jumpstart on your html page with this standard starter template",
     "language": "HTML",
     "author": "Alice Wu",
     "privacy": "Public",
     "date": "05-02-2021",
-    "code": "The code snippet goes here. Aliquam sem fringilla ut morbi. At varius vel pharetra vel. Egestas congue quisque egestas diam in arcu cursus euismod. In eu mi bibendum neque egestas congue. Tristique et egestas quis ipsum suspendisse ultrices gravida dictum. Orci porta non pulvinar neque. Eros in cursus turpis massa tincidunt. Magna ac placerat vestibulum lectus."
+    "like": 27,
+    "dislike": 3,
+    "code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n</head>\n<body>\n    \n</body>\n</html>"
   },
   {
-    "title": "Video Landing Page Template",
-    "description": "This is the description2 ",
-    "language": "HTML, CSS, JavaScript",
-    "author": "Frances Brown",
+    "title": "Easy Print Page Link",
+    "description": "This link will allow your viewers to easily print your web page. It utilizes the quick print feature already setup by your browser and utilizes no resources until it is clicked. Source: https://www.webhostingsecretrevealed.net/blog/featured-articles/15-cool-javascript-sample-snippets/",
+    "language": "JavaScript",
+    "author": "Alice Wu",
     "privacy": "Public",
     "date": "07-18-2021",
-    "code": "The HTML, CSS, and JavaScript code snippets go here. Donec enim diam vulputate ut pharetra sit. Montes nascetur ridiculus mus mauris. Erat pellentesque adipiscing commodo elit at. Adipiscing diam donec adipiscing tristique risus nec feugiat in. Luctus accumsan tortor posuere ac ut. Quis auctor elit sed vulputate mi. Turpis massa sed elementum tempus egestas sed sed risus pretium. Nullam ac tortor vitae purus faucibus ornare. Vulputate ut pharetra sit amet aliquam id."
+    "like": 9,
+    "dislike": 0,
+    "code": "<a href=\"javascript:window.print();\">Print Page</a>"
   },
   {
-    "title": "Animate.js",
-    "description": "This code is used to apply a CSS animation to an element. Source: Copyright 2021 Chris Ferdinandi, MIT License; https://gomakethings.com",
+    "title": "Change Link Colors",
+    "description": "This code is used to apply a CSS styling for links: link, active, visited, and hover.",
+    "language": "CSS",
+    "author": "Alice Wu",
+    "privacy": "Public",
+    "date": "10-19-2020",
+    "like": 17,
+    "dislike": 2,
+    "code": "a:link { color: gray; } a:visited { color: green; } a:hover { color: purple; } a:active { color: teal; }"
+  },
+  {
+    "title": "Shrink Header on Scroll",
+    "description": "This code demonstrates how to shrink a header when the user starts to scroll the page. Source: https://www.w3schools.com",
     "language": "JavaScript",
     "author": "Ronald Fromme",
     "privacy": "Public",
-    "date": "10-19-2020",
-    "code": "The code snippet goes here. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    "date": "02-18-2020",
+    "like": 33,
+    "dislike": 0,
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<style>\nbody { \n  margin: 0;\n  font-family: Arial, Helvetica, sans-serif;\n}\n\n#header {\n  background-color: #f1f1f1;\n  padding: 50px 10px;\n  color: black;\n  text-align: center;\n  font-size: 90px; \n  font-weight: bold;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  transition: 0.2s;\n}\n</style>\n</head>\n<body>\n\n<div id=\"header\">Header</div>\n\n<div style=\"margin-top:200px;padding:15px 15px 2500px;font-size:30px\">\n  <p><b>This example demonstrates how to shrink a header when the user starts to scroll the page.</b></p>\n  <p>Scroll down this frame to see the effect!</p>\n  <p>Scroll to the top to remove the effect.</p>\n  <p>Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n</div>\n\n<script>\n// When the user scrolls down 50px from the top of the document, resize the header's font size\nwindow.onscroll = function() {scrollFunction()};\n\nfunction scrollFunction() {\n  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {\n    document.getElementById(\"header\").style.fontSize = \"30px\";\n  } else {\n    document.getElementById(\"header\").style.fontSize = \"90px\";\n  }\n}\n</script>\n\n</body>\n</html>"
   },
   {
-    "title": "Performance Test",
-    "description": "Write simple vanilla JS performance tests. Eget est lorem ipsum dolor sit amet consectetur adipiscing. Auctor eu augue ut lectus arcu bibendum at.",
-    "language": "JavaScript",
-    "author": "Marni Goole",
+    "title": "Bubble Coloring Button",
+    "description": "This code is for a creative button hover effect. Bubbles color in the button upon hover. Source: https://freefrontend.com/css-button-hover-effects/",
+    "language": "CSS",
+    "author": "Ronald Fromme",
     "privacy": "Public",
     "date": "02-18-2020",
-    "code": "The code snippet goes here. Eleifend donec pretium vulputate sapien nec sagittis aliquam. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Amet risus nullam eget felis eget. Aenean pharetra magna ac placerat vestibulum. In hac habitasse platea dictumst quisque sagittis purus sit amet. Elementum curabitur vitae nunc sed velit dignissim sodales. Facilisi morbi tempus iaculis urna id volutpat. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam. Nulla at volutpat diam ut."
+    "like": 10,
+    "dislike": 0,
+    "code": "<!--HTML-->\n<nav> \n  <ul>\n    <li>\n      home\n      <span></span><span></span><span></span><span></span>\n    </li>\n    <li>\n      products\n      <span></span><span></span><span></span><span></span>\n    </li>\n    <li>\n      services\n      <span></span><span></span><span></span><span></span>\n    </li>\n    <li>\n      contact\n      <span></span><span></span><span></span><span></span>\n    </li>\n  </ul>\n</nav>\n\n\n/* CSS */\nbody {\n    margin: 0;\n    height: 100vh;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: black;\n}\n\nnav ul {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n}\n\nnav ul li {\n    --c: goldenrod;\n    color: var(--c);\n    font-size: 16px;\n    border: 0.3em solid var(--c);\n    border-radius: 0.5em;\n    width: 12em;\n    height: 3em;\n    text-transform: uppercase;\n    font-weight: bold;\n    font-family: sans-serif;\n    letter-spacing: 0.1em;\n    text-align: center;\n    line-height: 3em;\n    position: relative;\n    overflow: hidden;\n    z-index: 1;\n    transition: 0.5s;\n    margin: 1em;\n}\n\nnav ul li span {\n    position: absolute;\n    width: 25%;\n    height: 100%;\n    background-color: var(--c);\n    transform: translateY(150%);\n    border-radius: 50%;\n    left: calc((var(--n) - 1) * 25%);\n    transition: 0.5s;\n    transition-delay: calc((var(--n) - 1) * 0.1s);\n    z-index: -1;\n}\n\nnav ul li:hover {\n    color: black;\n}\n\nnav ul li:hover span {\n    transform: translateY(0) scale(2);\n}\n\nnav ul li span:nth-child(1) {\n    --n: 1;\n}\n\nnav ul li span:nth-child(2) {\n    --n: 2;\n}\n\nnav ul li span:nth-child(3) {\n    --n: 3;\n}\n\nnav ul li span:nth-child(4) {\n    --n: 4;\n}\n"
   },
   {
-    "title": "Basic Responsive CSS Boilerplate",
-    "description": "Styles designed to be a starting point, not a UI framework. Quick to start with zero compiling or installing necessary. Source: http://getskeleton.com",
+    "title": "Multi Select Checkbox",
+    "description": "This code Renders a checkbox list that uses a callback function to pass its selected value/values to the parent component. Source: https://www.30secondsofcode.org/react/s/multiselect-checkbox",
+    "language": "React",
+    "author": "Ronald Fromme",
+    "privacy": "Public",
+    "date": "01-10-2020",
+    "like": 12,
+    "dislike": 1,
+    "code": "const MultiselectCheckbox = ({ options, onChange }) => {\n  const [data, setData] = React.useState(options);\n\n  const toggle = index => {\n    const newData = [...data];\n    newData.splice(index, 1, {\n      label: data[index].label,\n      checked: !data[index].checked\n    });\n    setData(newData);\n    onChange(newData.filter(x => x.checked));\n  };\n\n  return (\n    <>\n      {data.map((item, index) => (\n        <label key={item.label}>\n          <input\n            readOnly\n            type=\"checkbox\"\n            checked={item.checked || false}\n            onClick={() => toggle(index)}\n          />\n          {item.label}\n        </label>\n      ))}\n    </>\n  );\n};\nconst options = [{ label: 'Item One' }, { label: 'Item Two' }];\n\nReactDOM.render(\n  <MultiselectCheckbox\n    options={options}\n    onChange={data => {\n      console.log(data);\n    }}\n  />,\n  document.getElementById('root')\n);\n\n"
+  },
+  {
+    "title": "HTML Email Form",
+    "description": "Basic Email form - All inputs, select, and buttons are normalized for a common height cross-browser so inputs can be stacked or placed alongside each other. Source: http://getskeleton.com",
     "language": "CSS",
     "author": "Pat Rebek",
     "privacy": "Public",
     "date": "05-28-2021",
-    "code": "Dictum non consectetur a erat nam at lectus. Porttitor rhoncus dolor purus non enim praesent. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed. Facilisis magna etiam tempor orci eu lobortis elementum nibh tellus. Congue eu consequat ac felis donec et odio pellentesque diam. Faucibus purus in massa tempor nec. Dignissim diam quis enim lobortis scelerisque fermentum. Aliquam ultrices sagittis orci a scelerisque purus semper. Lectus quam id leo in vitae turpis. Magna etiam tempor orci eu lobortis. Id velit ut tortor pretium viverra suspendisse potenti nullam ac. Sed nisi lacus sed viverra tellus in hac habitasse."
+    "like": 28,
+    "dislike": 2,
+    "code": "<!-- The above form looks like this -->\n<form>\n  <div class=\"row\">\n    <div class=\"six columns\">\n      <label for=\"exampleEmailInput\">Your email</label>\n      <input class=\"u-full-width\" type=\"email\" placeholder=\"test@mailbox.com\" id=\"exampleEmailInput\">\n    </div>\n    <div class=\"six columns\">\n      <label for=\"exampleRecipientInput\">Reason for contacting</label>\n      <select class=\"u-full-width\" id=\"exampleRecipientInput\">\n        <option value=\"Option 1\">Questions</option>\n        <option value=\"Option 2\">Admiration</option>\n        <option value=\"Option 3\">Can I get your number?</option>\n      </select>\n    </div>\n  </div>\n  <label for=\"exampleMessage\">Message</label>\n  <textarea class=\"u-full-width\" placeholder=\"Hi Dave …\" id=\"exampleMessage\"></textarea>\n  <label class=\"example-send-yourself-copy\">\n    <input type=\"checkbox\">\n    <span class=\"label-body\">Send a copy to yourself</span>\n  </label>\n  <input class=\"button-primary\" type=\"submit\" value=\"Submit\">\n</form>\n\n<!-- Always wrap checkbox and radio inputs in a label and use a <span class=\"label-body\"> inside of it -->\n\n<!-- Note: The class .u-full-width is just a utility class shorthand for width: 100% -->"
+  },
+  {
+    "title": "Toggle Light Mode - Dark Mode",
+    "description": "Switch between dark and light mode with JavaScript and CSS.Source: http://www.w3schools.com",
+    "language": "Javascript",
+    "author": "Pat Rebek",
+    "privacy": "Public",
+    "date": "03-08-2021",
+    "like": 1,
+    "dislike": 0,
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<style>\nbody {\n  padding: 25px;\n  background-color: white;\n  color: black;\n  font-size: 25px;\n}\n\n.dark-mode {\n  background-color: black;\n  color: white;\n}\n</style>\n</head>\n<body>\n\n<h2>Toggle Dark/Light Mode</h2>\n<p>Click the button to toggle between dark and light mode for this page.</p>\n\n<button onclick=\"myFunction()\">Toggle dark mode</button>\n\n<script>\nfunction myFunction() {\n   var element = document.body;\n   element.classList.toggle(\"dark-mode\");\n}\n</script>\n\n</body>\n</html>\n"
   }
 ]
