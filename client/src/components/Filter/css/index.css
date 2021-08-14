@@ -1,0 +1,10 @@
+.filterList {
+    margin-left: 1rem;
+    text-align: center;
+}
+
+.filterList h3{
+    margin: 0px;
+    background-color: #0097a7;
+    color: #ffffff;
+}

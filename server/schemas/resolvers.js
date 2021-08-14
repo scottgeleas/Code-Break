@@ -7,6 +7,12 @@ const resolvers = {
         users: async () => User.find({}),
         snippets: async () => Snippet.find({}),
         comments: async () => Comment.find({}),
+        filterSnippets: async (parents, args) => {
+            const results = await Snippet.findOne({
+                language: args.language
+            })
+            return results
+        }
     },
 
     Mutation: {

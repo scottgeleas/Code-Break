@@ -29,8 +29,8 @@ const authLink = setContext((_, { headers }) => {
         headers: {
             ...headers,
             authorization: token ? `Bearer ${token}` : '',
-        }
-    }
+        },
+    };
 });
 
 const client = new ApolloClient({
@@ -51,9 +51,35 @@ function App() {
                     <Switch>
                         <Route path='/' exact>
                             <h1>Homepage</h1>
+                            <div className='mainContent'>
+                                <div className='container'>
+                                    <div className='row'>
+                                        <div className='col-3'>
+                                            <Filter />
+                                        </div>
+
+                                        <div className='col-9'>
+                                            {/* Snippet Component here */}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </Route>
                         <Route path='/dashboard' exact>
                             <h1>Dashboard</h1>
+                            <div className='mainContent'>
+                                <div className='container'>
+                                    <div className='row'>
+                                        <div className='col-3'>
+                                            <Filter />
+                                        </div>
+
+                                        <div className='col-9'>
+                                            {/* Snippet Component here */}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </Route>
                         <Route path='/signup' exact>
                             <Signup />
@@ -62,19 +88,6 @@ function App() {
                             <Login />
                         </Route>
                     </Switch>
-                    <div className='mainContent'>
-                        <div className='container'>
-                            <div className='row'>
-                                <div className='col-3'>
-                                    <Filter />
-                                </div>
-
-                                <div className='col-9'>
-                                    {/* Snippet Component here */}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <Footer />
                 </div>
             </Router>
