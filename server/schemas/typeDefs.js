@@ -37,6 +37,7 @@ const typeDefs = gql`
         snippets: [Snippet]
         comments: [Comment]
         filterSnippets(language: String!): Snippet
+        getSnippet(id: ID!): Snippet
     }
 
     type Mutation {
