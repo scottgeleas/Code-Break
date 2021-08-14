@@ -33,10 +33,11 @@ const authMiddleware = ({ req }) => {
 
         req.user = data;
 
-        return req;
     } catch (err) {
         console.error('Invalid token');
     }
+
+    return req;
 }
 
 module.exports = {
