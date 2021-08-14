@@ -27,7 +27,7 @@ const authMiddleware = ({ req }) => {
     }
 
     try {
-        const { data } = jwt.verify(token, JWT_SECRET, {
+        const { data } = jwt.verify(token, process.env.JWT_SECRET, {
             maxAge: jwtExpiration,
         });
 
