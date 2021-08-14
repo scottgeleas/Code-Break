@@ -7,6 +7,14 @@ const resolvers = {
         users: async () => User.find({}),
         snippets: async () => Snippet.find({}),
         comments: async () => Comment.find({}),
+        getSnippet: async (parent, args) => {
+            const snippet = await Snippet.findById(args.id).populate('comment');
+
+            if (!snippet) {
+                throw new AuthenticationError('Error! Cannot retrieve snippet data.');
+            }
+            return snippet;
+        },
     },
 
     Mutation: {
@@ -22,7 +30,7 @@ const resolvers = {
             return {
                 token: token,
                 user: user,
-            }
+            };
         },
         loginUser: async (parent, args) => {
             const user = await User.findOne({
@@ -44,14 +52,21 @@ const resolvers = {
             return {
                 token: token,
                 user: user,
-            }
+            };
         },
         createSnippet: async (parent, args) => {
             const snippets = await Snippet.create(args);
+            if (!snippets) {
+                throw new AuthenticationError('Error! Cannot create snippets');
+            }
             return snippets;
         },
+
         createComment: async (parent, args) => {
             const comments = await Comment.create(args);
+            if (!comments) {
+                throw new AuthenticationError('Error! Cannot create comments');
+            }
             return comments;
         },
     },
