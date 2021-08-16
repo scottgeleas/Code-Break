@@ -19,3 +19,14 @@ export const GET_SNIPPET = gql`
         }
     }
 `;
+
+export const GET_ME = gql`
+    query getMe {
+        getMe {
+            _id
+            username
+            email
+        }
+    }
+    `
+

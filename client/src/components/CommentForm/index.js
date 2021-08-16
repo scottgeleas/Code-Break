@@ -1,24 +1,24 @@
-import './css/index.css';
 import { useState } from 'react';
 
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { CREATE_COMMENT } from '../../utils/mutations';
+import { GET_ME } from '../../utils/queries';
 
-
-function Comment() {
+function CommentForm() {
     const [commentState, setCommentState] = useState({
-        author: '',
         text: '',
     });
 
+    const {loading, data} = useQuery(GET_ME);
+    const userData = data?.getMe || {};
     const [createComment] = useMutation(CREATE_COMMENT);
 
     const handleChange = (event) => {
-        const { author, value } = event.target;
+        const { name, value } = event.target;
 
         setCommentState({
             ...commentState,
-            [author]: value,
+            [name]: value,
             
         });
     }
@@ -27,12 +27,12 @@ function Comment() {
         event.preventDefault();
 
         try {
-            const { data } = await createComment({
+            await createComment({
                 variables: {
-                    ...commentState,
+                    author: userData.username,
+                    text: commentState.text
                 },
             });
-
             
         } catch (err) {
             console.error(err);
@@ -41,39 +41,31 @@ function Comment() {
 
     return (
         <div className="commentContainer">
-            <form onSubmit={handleFormSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="commentAuthor" className="form-label">Author</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="commentAuthor"
-                        name="Author"
-                        placeholder="Tom Smith"
-                        required="required"
-                        value={commentState.text}
-                        onChange={handleChange}
-                    />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="commentText" className="form-label">Your Comment</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="commentText"
-                        name="comment"
-                        placeholder="This is your comment text."
-                        required="required"
-                        value={commentState.text}
-                        onChange={handleChange}
-                    />
-                </div>
+            {loading ? (
+                <p>Loading...</p>
+            ): (
+                <form onSubmit={handleFormSubmit}>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
-                <a className="btn btn-primary" href="/comment">Submit Comment</a>
-            </form>
+                    <div className="mb-3">
+                        <label htmlFor="commentText" className="form-label">Your Comment</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="commentText"
+                            name="text"
+                            placeholder="Type your comment here."
+                            required="required"
+                            value={commentState.text}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <button type="submit" className="btn btn-primary">Submit</button>
+                </form>
+            )}
+           
         </div>
     );
 }
 
-export default Comment;
+export default CommentForm;
