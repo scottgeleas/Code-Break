@@ -52,7 +52,7 @@ function App() {
                     <Switch>
                         <Route path='/' exact>
                             <h1>Homepage</h1>
-                        <CommentForm/>
+                            <CommentForm/>
                         </Route>
                         <Route path='/dashboard' exact>
                             <h1>Dashboard</h1>

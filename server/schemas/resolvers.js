@@ -18,12 +18,13 @@ const resolvers = {
         getMe: async (parent, args, context) => {
             console.log(context.user);
             if (context.user) {
-                // const user = await User.findOne({
-                //     _id: context.user._id,
-                // });
+                const user = await User.findOne({
+                    _id: context.user._id,
+                });
 
-                // return user;
+                return user;
             }
+
             throw new AuthenticationError('You must log in.');
         },
     },
