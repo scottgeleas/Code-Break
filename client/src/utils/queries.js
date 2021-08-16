@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client' ;
+import { gql } from '@apollo/client';
 
 export const GET_SNIPPET = gql`
     query getSnippet($id: ID!) {
@@ -12,7 +12,7 @@ export const GET_SNIPPET = gql`
             isPublic
             code
             comments {
-                _id: ID!
+                _id
                 author
                 text
             }
