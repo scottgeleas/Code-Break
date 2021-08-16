@@ -3,16 +3,24 @@
     max-width: 600px;
     margin-right: auto;
     margin-left: auto;
+ 
 }
 
 .loginContainer .btn{
     margin-right: 20px;
-    background-color: #0097a7!important;
-    color: black!important;
+    background-color: #85d5e6;
+    color: #001633;
     font-weight: bold;
     font-size: 18px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.form-label{
+    color: #85d5e6!important;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 24px;
 }
 
 .mb-3{
-    font-size: 22px;
+    font-family: 'Montserrat Alternates', sans-serif;
 }

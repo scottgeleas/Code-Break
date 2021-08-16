@@ -10,7 +10,7 @@ const signToken = ({ _id, username, email }) => {
         email,
     };
 
-    return jwt.sign(payload, process.env.JWT_SECRET, {
+    return jwt.sign({ data: payload }, process.env.JWT_SECRET, {
         expiresIn: jwtExpiration,
     });
 }
