@@ -1,5 +1,6 @@
-import './css/index.css';
+
 import { useState } from 'react';
+import './css/index.css';
 
 import { useMutation } from '@apollo/client';
 import { CREATE_USER } from '../../utils/mutations';
