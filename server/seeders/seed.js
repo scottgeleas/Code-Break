@@ -1,13 +1,14 @@
 const db = require('../config/connection');
-const { User, Snippet } = require('../models');
+const { User, Snippet, Comment} = require('../models');
 const userSeeds = require('./userSeeds.json');
 const snippetSeeds = require('./snippetSeeds.json');
+const commentSeeds = require('./commentSeeds.json');
 
 db.once('open', async () => {
     try {
         await Snippet.deleteMany({});
         await User.deleteMany({});
-
+        await Comment.deleteMany({});
         await User.create(userSeeds);
 
         for (let i = 0; i < snippetSeeds.length; i++) {
@@ -17,6 +18,19 @@ db.once('open', async () => {
                 {
                     $addToSet: {
                         snippets: { _id },
+                    },
+                },
+            );
+        }
+
+        for (let i = 0; i < commentSeeds.length; i++) {
+            const { _id } = await Comment.create(commentSeeds[i]);
+
+            await Snippet.findOneAndUpdate(
+                {},
+                {
+                    $addToSet: {
+                        comments: { _id },
                     },
                 },
             );

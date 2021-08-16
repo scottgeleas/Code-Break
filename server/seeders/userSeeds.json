@@ -1,24 +1,20 @@
 [
   {
-    "user_id": 1,
     "username": "Tom Smith",
     "email": "tsmith@email.com",
     "password": "password01"
   },
   {
-    "user_id": 2,
     "username": "Alice Wu",
     "email": "awu@email.com",
     "password": "password01"
   },
   {
-    "user_id": 3,
     "username": "Ronald Fromme",
     "email": "rfromme@email.com",
     "password": "password01"
   },
   {
-    "user_id": 4,
     "username": "Pat Rebek",
     "email": "prebek@email.com",
     "password": "password01"
