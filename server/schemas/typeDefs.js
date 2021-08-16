@@ -28,8 +28,8 @@ const typeDefs = gql`
 
     type Comment {
         _id: ID!
-        author(username: String!): [User] 
         text: String!
+        author: String!
     }
 
     type Query {
@@ -37,13 +37,14 @@ const typeDefs = gql`
         snippets: [Snippet]
         comments: [Comment]
         getSnippet(id: ID!): Snippet
+        getMe: User
     }
 
     type Mutation {
         createUser(username: String!, email: String!, password: String!): Auth
         loginUser(email: String!, password: String!): Auth
         createSnippet: Snippet
-        createComment: Comment
+        createComment(author: String!, text: String!): Comment
     }
 `;
 
