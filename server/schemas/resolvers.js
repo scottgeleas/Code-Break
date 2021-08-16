@@ -16,7 +16,6 @@ const resolvers = {
             return snippet;
         },
         getMe: async (parent, args, context) => {
-            console.log(context.user);
             if (context.user) {
                 const user = await User.findOne({
                     _id: context.user._id,
@@ -75,11 +74,13 @@ const resolvers = {
         },
 
         createComment: async (parent, args) => {
-            const comments = await Comment.create(args);
-            if (!comments) {
-                throw new AuthenticationError('Error! Cannot create comments');
+            const comment = await Comment.create(args);
+
+            if (!comment) {
+                throw new AuthenticationError('Error! Cannot create comment.');
             }
-            return comments;
+
+            return comment;
         },
     },
 };

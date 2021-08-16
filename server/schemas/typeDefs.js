@@ -28,8 +28,8 @@ const typeDefs = gql`
 
     type Comment {
         _id: ID!
-        author(username: String!): [User] 
         text: String!
+        author: String!
     }
 
     type Query {

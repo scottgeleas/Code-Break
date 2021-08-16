@@ -17,7 +17,6 @@ import Login from './components/Login/index';
 import Banner from './components/Banner/index';
 import Footer from './components/Footer/index';
 import Filter from './components/Filter/index';
-import CommentForm from './components/CommentForm/index';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -52,7 +51,6 @@ function App() {
                     <Switch>
                         <Route path='/' exact>
                             <h1>Homepage</h1>
-                            <CommentForm/>
                         </Route>
                         <Route path='/dashboard' exact>
                             <h1>Dashboard</h1>
