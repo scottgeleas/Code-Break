@@ -1,4 +1,14 @@
-.navbar{
+
+ .navbar-toggler{
+    color: #ffab40!important; 
+  }
+
+.navbar-toggler-icon{
+    color: #ffab40!important  
+    
+  } 
+
+.nav{
 height: 60px;
 display: flex;
 justify-content: center;
@@ -7,24 +17,22 @@ font-size: 16px;
 position: sticky;
 top: 0;
 z-index: 999; 
+
 }
 
 .nav-link{
     height: 40px;
-    color: black;
+    color: #ffab40!important;
+    font-family: 'Montserrat Alternates', sans-serif;
     padding: 0.5rem;
     height: 100%;
     font-size: 18px;
     padding-right: 10px;
-    font-size: 20px!important;
-    color: black!important;
 }
 
 .nav-link:hover {
-    color: black!important;
-    border-bottom: 1.5px solid gray;
+    color: #ffab40!important;
+    border-bottom: 1.5px solid #ffab40;
     transition: all 0.2s ease-out;
   }
-
-
 

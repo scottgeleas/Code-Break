@@ -5,9 +5,12 @@
     color: #ffab40;
     text-shadow: 3px 3px 6px #0097a7, 0 0 25px #85d5e6, 0 0 5px #ffab40;  
 } */
-
+body{
+    background-color: #001633;
+  }
+  
 #logo{
-    width: 300px;
+    width: 400px;
     height: auto;
     background-color: #001633;
 }
