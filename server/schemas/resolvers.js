@@ -90,7 +90,29 @@ const resolvers = {
 
             throw new AuthenticationError('You must log in.');
         },
+        editSnippet: async (parent, args, context) => {
+            if (context.user) {
+                const snippet = await Snippet.findOneAndUpdate({
+                    _id: args.id,
+                }, {
+                    title: args.title,
+                    description: args.description,
+                    language: args.language,
+                    code: args.code,
+                    isPublic: args.isPublic,
+                }, {
+                    new: true,
+                });
 
+                if (!snippet) {
+                    throw new AuthenticationError('Error! Cannot update snippet.');
+                }
+
+                return snippet;
+            }
+
+            throw new AuthenticationError('You must log in.');
+        },
         createComment: async (parent, args) => {
             const comment = await Comment.create(args);
 

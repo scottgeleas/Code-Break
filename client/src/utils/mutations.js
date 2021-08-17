@@ -48,3 +48,16 @@ export const CREATE_SNIPPET = gql`
         }
     }
 `;
+
+export const EDIT_SNIPPET = gql`
+    mutation editSnippet($id: ID!, $title: String!, $description: String, $language: String!, $code: String!, $isPublic: Boolean) {
+        editSnippet(id: $id, title: $title, description: $description, language: $language, code: $code, isPublic: $isPublic) {
+            _id
+            title
+            description
+            language
+            code
+            isPublic
+        }
+    }
+`;
