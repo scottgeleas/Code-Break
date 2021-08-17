@@ -6,5 +6,11 @@ body{
 #logo{
     width: 400px;
     height: auto;
-    background-color: #001633;
 }
+
+@media (max-width:767px){
+  #logo {
+    width: 200px; 
+    height: auto 
+  }
+ }

@@ -1,6 +1,7 @@
 import React from 'react';
 import './css/index.css';
 import auth from '../../utils/auth';
+import mini from '../Footer/images/mini.png'
 
 
 export default function Footer() {
@@ -9,8 +10,7 @@ export default function Footer() {
 
         <div className="footer-container">
             <ul className="foot">
-
-
+                
                 <li className="nav-item">
                     <a className="nav-link" href="/">Homepage</a>
                 </li>
@@ -25,7 +25,6 @@ export default function Footer() {
                             <a onClick={() => auth.logout()} className="nav-link" href="/">Logout</a>
                         </li>
 
-
                     </>
 
                 )
@@ -39,14 +38,14 @@ export default function Footer() {
                             {/* <li className="nav-item">
                                             <a className="nav-link" href="/signup">Signup</a>
                                         </li> */}
-
-
                         </>
 
                     )}
 
             </ul>
-        </div>
 
+            <img id='mini' src={mini} alt="logo" />
+        </div>
+        
     )
 }
