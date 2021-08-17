@@ -8,7 +8,7 @@ const resolvers = {
         getAllSnippets: async () => Snippet.find({}),
         comments: async () => Comment.find({}),
         getSnippet: async (parent, args) => {
-            const snippet = await Snippet.findById(args.id).populate('comment');
+            const snippet = await Snippet.findById(args.id).populate('comments');
 
             if (!snippet) {
                 throw new AuthenticationError(
