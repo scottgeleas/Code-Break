@@ -1,31 +1,13 @@
 import React, { useState } from 'react';
 import './css/index.css';
 
-import { useLazyQuery } from '@apollo/client';
-import { QUERY_FILTER_SNIPPETS } from '../../utils/queries';
-
 function Filter() {
-    // const [filterState, setLanguage] = useState("");
-    const [language, setLanguage] = useState("");
-    const [getSnippet, { loading, data }] = useLazyQuery(QUERY_FILTER_SNIPPETS, {
-        // pass URL parameter
-        variables: { filterSnippets: language },
-    });
-    
-    // const  snippetData = data?  || {};
+    const [language, setLanguage] = useState('');
 
-    
     const filterResults = (event) => {
-        // get only results of selected language
         const selected = event.currentTarget.dataset.language;
-        console.log(selected)
-
+        console.log(selected);
         setLanguage(selected);
-        getSnippet();
-
-        console.log("language: " + language )
-        
-        console.log(data)
     };
 
     const languages = [
@@ -50,7 +32,7 @@ function Filter() {
             key={index}
             onClick={filterResults}
             data-language={l.name}
-            >
+        >
             {l.name}
         </button>
     ));
@@ -61,7 +43,6 @@ function Filter() {
                 <h3 className=' list-group-item'>Filter</h3>
                 {languagesList}
             </ul>
-            {data && <p>{data.language}</p>}
         </>
     );
 }
