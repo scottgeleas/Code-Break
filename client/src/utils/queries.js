@@ -1,5 +1,18 @@
 import { gql } from '@apollo/client';
 
+export const GET_ALL_SNIPPETS = gql`
+    query getAllSnippets {
+        getAllSnippets {
+            _id
+            title
+            description
+            language
+            like
+            dislike
+            isPublic
+        }
+    }
+`;
 export const GET_SNIPPET = gql`
     query getSnippet($id: ID!) {
         getSnippet(id: $id) {

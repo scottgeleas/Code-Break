@@ -5,13 +5,15 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         users: async () => User.find({}),
-        snippets: async () => Snippet.find({}),
+        getAllSnippets: async () => Snippet.find({}),
         comments: async () => Comment.find({}),
         getSnippet: async (parent, args) => {
             const snippet = await Snippet.findById(args.id).populate('comment');
 
             if (!snippet) {
-                throw new AuthenticationError('Error! Cannot retrieve snippet data.');
+                throw new AuthenticationError(
+                    'Error! Cannot retrieve snippet data.'
+                );
             }
 
             return snippet;
@@ -34,7 +36,9 @@ const resolvers = {
             const user = await User.create(args);
 
             if (!user) {
-                throw new AuthenticationError('Something is wrong! Can\'t create user.');
+                throw new AuthenticationError(
+                    "Something is wrong! Can't create user."
+                );
             }
 
             const token = signToken(user);
@@ -50,10 +54,14 @@ const resolvers = {
             });
 
             if (!user) {
-                throw new AuthenticationError('No user found with this email address.');
+                throw new AuthenticationError(
+                    'No user found with this email address.'
+                );
             }
 
-            const isCorrectPassword = await user.isCorrectPassword(args.password);
+            const isCorrectPassword = await user.isCorrectPassword(
+                args.password
+            );
 
             if (!isCorrectPassword) {
                 throw new AuthenticationError('Incorrect password.');
