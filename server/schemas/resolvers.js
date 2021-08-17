@@ -8,7 +8,7 @@ const resolvers = {
         getAllSnippets: async () => Snippet.find({}),
         comments: async () => Comment.find({}),
         getSnippet: async (parent, args) => {
-            const snippet = await Snippet.findById(args.id).populate('comment');
+            const snippet = await Snippet.findById(args.id).populate('comments');
 
             if (!snippet) {
                 throw new AuthenticationError(
@@ -74,14 +74,45 @@ const resolvers = {
                 user: user,
             };
         },
-        createSnippet: async (parent, args) => {
-            const snippets = await Snippet.create(args);
-            if (!snippets) {
-                throw new AuthenticationError('Error! Cannot create snippets');
-            }
-            return snippets;
-        },
+        createSnippet: async (parent, args, context) => {
+            if (context.user) {
+                const snippet = await Snippet.create({
+                    ...args,
+                    author: context.user.username,
+                });
 
+                if (!snippet) {
+                    throw new AuthenticationError('Error! Cannot create snippets');
+                }
+
+                return snippet;
+            }
+
+            throw new AuthenticationError('You must log in.');
+        },
+        editSnippet: async (parent, args, context) => {
+            if (context.user) {
+                const snippet = await Snippet.findOneAndUpdate({
+                    _id: args.id,
+                }, {
+                    title: args.title,
+                    description: args.description,
+                    language: args.language,
+                    code: args.code,
+                    isPublic: args.isPublic,
+                }, {
+                    new: true,
+                });
+
+                if (!snippet) {
+                    throw new AuthenticationError('Error! Cannot update snippet.');
+                }
+
+                return snippet;
+            }
+
+            throw new AuthenticationError('You must log in.');
+        },
         createComment: async (parent, args) => {
             const comment = await Comment.create(args);
 

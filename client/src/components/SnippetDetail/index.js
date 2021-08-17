@@ -7,6 +7,7 @@ import { GET_SNIPPET } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 import CommentForm from '../CommentForm/index';
+import CommentsList from '../CommentsList/index';
 
 function SnippetDetail() {
     const { snippetId } = useParams();
@@ -55,6 +56,7 @@ function SnippetDetail() {
                     {isLoggedIn ? (
                         <CommentForm />
                     ) : null}
+                    <CommentsList comments={data.getSnippet.comments}/>
                 </>
             )}
         </div>

@@ -8,6 +8,6 @@
     justify-content: space-between;
 }
 
-
-
-
+textarea.snippet-code-textarea {
+    min-height: calc(9em + .75rem + 2px);
+}

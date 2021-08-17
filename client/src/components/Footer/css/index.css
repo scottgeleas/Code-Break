@@ -1,35 +1,3 @@
-body{
-  background-color: #001633;
-}
-
-.nav{
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    }
-    
-    .footer-link{
-        color: black;
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        padding: 0.5rem 16px;
-        height: 100%;
-        font-family: 'Montserrat Alternates', sans-serif;
-        font-size: 22px;
-        color: #ffab40!important;
-    }
-    
-    .footer-link:hover {
-        color: #ffab40!important;
-        border-bottom: 1.5px solid #ffab40;
-        transition: all 0.2s ease-out;
-      }
 
       .footer-container {
         margin-top: 400px;
@@ -39,4 +7,15 @@ body{
         justify-content: center;
         align-items: center;
        
+      }
+
+      .foot{
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        position: sticky;
+        top: 0;
+        z-index: 999; 
       }

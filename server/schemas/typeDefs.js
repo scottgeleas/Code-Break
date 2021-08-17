@@ -44,7 +44,8 @@ const typeDefs = gql`
     type Mutation {
         createUser(username: String!, email: String!, password: String!): Auth
         loginUser(email: String!, password: String!): Auth
-        createSnippet: Snippet
+        createSnippet(title: String!, description: String, language: String!, code: String!, isPublic: Boolean): Snippet
+        editSnippet(id: ID!, title: String!, description: String, language: String!, code: String!, isPublic: Boolean): Snippet
         createComment(author: String!, text: String!): Comment
     }
 `;
