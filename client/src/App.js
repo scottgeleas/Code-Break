@@ -8,6 +8,7 @@ import { setContext } from '@apollo/client/link/context';
 import Auth from './utils/auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/index';
@@ -17,6 +18,7 @@ import Login from './components/Login/index';
 import Banner from './components/Banner/index';
 import Footer from './components/Footer/index';
 import Filter from './components/Filter/index';
+import SnippetDetail from './components/SnippetDetail';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -60,6 +62,9 @@ function App() {
                         </Route>
                         <Route path='/login' exact>
                             <Login />
+                        </Route>
+                        <Route path='/snippets/:snippetId' exact>
+                            <SnippetDetail />
                         </Route>
                     </Switch>
                     <div className='mainContent'>

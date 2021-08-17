@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const GET_SNIPPET = gql`
     query getSnippet($id: ID!) {
-        getSnippet(_id: $id) {
+        getSnippet(id: $id) {
             _id
             title
             description
