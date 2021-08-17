@@ -1,20 +1,29 @@
 import { useState } from 'react';
 
 import { useMutation } from '@apollo/client';
-import { CREATE_SNIPPET } from '../../utils/mutations';
+import { EDIT_SNIPPET } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
-function SnippetCreateForm() {
-    const [newSnippetState, setNewSnippetState] = useState({
-        title: '',
-        description: '',
-        language: '',
-        code: '',
-        isPublic: false,
+function SnippetEditFrom(props) {
+    const { snippetData } = props;
+
+    const [editedSnippetState, setEditedSnippetState] = useState({
+        id: snippetData ? snippetData._id : '',
+        title: snippetData ? snippetData.title : '',
+        description: snippetData ? snippetData.description : '',
+        language: snippetData ? snippetData.language : '',
+        code: snippetData ? snippetData.code : '',
+        isPublic: snippetData ? snippetData.isPublic : false,
     });
 
-    const [createSnippet] = useMutation(CREATE_SNIPPET);
+    const [editSnippet] = useMutation(EDIT_SNIPPET);
+
+    if (!snippetData) {
+        return (
+            <></>
+        );
+    }
 
     const languages = [
         {
@@ -36,8 +45,8 @@ function SnippetCreateForm() {
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
 
-        setNewSnippetState({
-            ...newSnippetState,
+        setEditedSnippetState({
+            ...editedSnippetState,
             [name]: value,
         });
     }
@@ -54,21 +63,13 @@ function SnippetCreateForm() {
         }
 
         try {
-            const { data } = await createSnippet({
+            const { data } = await editSnippet({
                 variables: {
-                    ...newSnippetState,
+                    ...editedSnippetState,
                 },
             });
 
-            setNewSnippetState({
-                title: '',
-                description: '',
-                language: '',
-                code: '',
-                isPublic: false,
-            });
-
-            document.querySelector('.js-close-create-snippet-modal').click();
+            document.querySelector('.js-close-edit-snippet-modal').click();
         } catch (err) {
             console.error(err);
         }
@@ -76,16 +77,16 @@ function SnippetCreateForm() {
 
     return (
         <>
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createSnippetModal">Create New Snippet</button>
+            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editSnippetModal">Edit Snippet</button>
 
-            <div className="modal fade" id="createSnippetModal" tabIndex="-1" aria-labelledby="createSnippetModalLabel" aria-hidden="true">
+            <div className="modal fade" id="editSnippetModal" tabIndex="-1" aria-labelledby="editSnippetModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="createSnippetModalLabel">Create New Snippet</h5>
+                            <h5 className="modal-title" id="editSnippetModalLabel">Edit Snippet</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form onSubmit={handleFormSubmit}>
+                        <form onSubmit={handleFormSubmit} id="edit-form">
                             <div className="modal-body">
                                 <div className="mb-3">
                                     <label htmlFor="snippetTitle" className="form-label">Title</label>
@@ -95,7 +96,7 @@ function SnippetCreateForm() {
                                         id="snippetTitle"
                                         name="title"
                                         required="required"
-                                        value={newSnippetState.title}
+                                        value={editedSnippetState.title}
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -106,7 +107,7 @@ function SnippetCreateForm() {
                                         className="form-control"
                                         id="snippetDescription"
                                         name="description"
-                                        value={newSnippetState.description}
+                                        value={editedSnippetState.description}
                                         onChange={handleChange}
                                     ></textarea>
                                 </div>
@@ -118,7 +119,7 @@ function SnippetCreateForm() {
                                         name="language"
                                         aria-label="Snippet language"
                                         required="required"
-                                        value={newSnippetState.language}
+                                        value={editedSnippetState.language}
                                         onChange={handleChange}
                                     >
                                         <option value="">Select snippet language</option>
@@ -137,7 +138,7 @@ function SnippetCreateForm() {
                                         id="snippetCode"
                                         name="code"
                                         required="required"
-                                        value={newSnippetState.code}
+                                        value={editedSnippetState.code}
                                         onChange={handleChange}
                                     ></textarea>
                                 </div>
@@ -147,14 +148,15 @@ function SnippetCreateForm() {
                                         type="checkbox"
                                         id="snippetIsPublic"
                                         name="isPublic"
+                                        checked={editedSnippetState.isPublic}
                                         onChange={handleChange}
                                     />
                                     <label className="form-check-label" htmlFor="snippetIsPublic">Make snippet public</label>
                                 </div>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary js-close-create-snippet-modal" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" className="btn btn-primary">Create Snippet</button>
+                                <button type="button" className="btn btn-secondary js-close-edit-snippet-modal" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" className="btn btn-primary">Edit Snippet</button>
                             </div>
                         </form>
                     </div>
@@ -164,4 +166,4 @@ function SnippetCreateForm() {
     );
 }
 
-export default SnippetCreateForm;
+export default SnippetEditFrom;
