@@ -1,14 +1,5 @@
 
- .navbar-toggler{
-    color: #ffab40!important; 
-  }
-
-.navbar-toggler-icon{
-    color: #ffab40!important  
-    
-  } 
-
-.nav{
+.navbar{
 height: 60px;
 display: flex;
 justify-content: center;
@@ -36,3 +27,14 @@ z-index: 999;
     transition: all 0.2s ease-out;
   }
 
+.navbar-toggler{
+    color: #ffab40; 
+    
+  }
+
+ 
+.navbar-toggler-icon{
+  background-color:  #ffab40; 
+  color: white;
+    
+  } 
