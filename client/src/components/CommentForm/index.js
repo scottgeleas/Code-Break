@@ -43,7 +43,7 @@ function CommentForm() {
     }
 
     return (
-        <div className="commentContainer">
+        <div className="commentContainer mb-4">
             {loading ? (
                 <p>Loading...</p>
             ) : (
