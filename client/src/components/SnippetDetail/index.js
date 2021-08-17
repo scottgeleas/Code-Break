@@ -21,10 +21,14 @@ function SnippetDetail() {
     let hljsData = '';
 
     if (!loading) {
-        hljsData = hljs.highlight(data.getSnippet.code.replace(/\\n/g, '\n'), {
-            language: data.getSnippet.language,
-            ignoreIllegals: true,
-        });
+        if (data) {
+            hljsData = hljs.highlight(data.getSnippet.code.replace(/\\n/g, '\n'), {
+                language: data.getSnippet.language,
+                ignoreIllegals: true,
+            });
+        } else {
+            document.location.assign('/');
+        }
     }
 
     return (
@@ -37,7 +41,7 @@ function SnippetDetail() {
                 <>
                     <h2 className="display-3">{data.getSnippet.title}</h2>
                     <p className="lead mb-3">{data.getSnippet.description}</p>
-                    <div className="card mb-4">
+                    <div className="card mb-5">
                         <div className="card-header">
                             {data.getSnippet.language}
                         </div>
@@ -51,8 +55,6 @@ function SnippetDetail() {
                     {isLoggedIn ? (
                         <CommentForm />
                     ) : null}
-                    
-                    {/* {data.getSnippet.isPublic ? (<p>Public</p>) : ('')} */}
                 </>
             )}
         </div>
