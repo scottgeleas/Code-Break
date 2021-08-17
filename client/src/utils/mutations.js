@@ -36,3 +36,15 @@ export const CREATE_COMMENT = gql`
     }
 `;
 
+export const CREATE_SNIPPET = gql`
+    mutation createSnippet($title: String!, $description: String, $language: String!, $code: String!, $isPublic: Boolean) {
+        createSnippet(title: $title, description: $description, language: $language, code: $code, isPublic: $isPublic) {
+            _id
+            title
+            description
+            language
+            code
+            isPublic
+        }
+    }
+`;
