@@ -63,7 +63,7 @@ function App() {
                         <Route path='/login' exact>
                             <Login />
                         </Route>
-                        <Route path='/snippets/:id' exact>
+                        <Route path='/snippets/:snippetId' exact>
                             <SnippetDetail />
                         </Route>
                     </Switch>

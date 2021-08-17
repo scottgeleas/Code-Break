@@ -13,6 +13,7 @@ const resolvers = {
             if (!snippet) {
                 throw new AuthenticationError('Error! Cannot retrieve snippet data.');
             }
+
             return snippet;
         },
         getMe: async (parent, args, context) => {

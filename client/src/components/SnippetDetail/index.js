@@ -1,19 +1,23 @@
 import hljs from 'highlight.js';
 import 'highlight.js/styles/vs2015.css';
-import { useParams } from 'react-router-dom';
 
+import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_SNIPPET } from '../../utils/queries';
 
+import Auth from '../../utils/auth';
+import CommentForm from '../CommentForm/index';
+
 function SnippetDetail() {
-    const { id } = useParams();
+    const { snippetId } = useParams();
 
     const { loading, data } = useQuery(GET_SNIPPET, {
         variables: {
-            snippetId: id,
+            id: snippetId,
         },
     });
 
+    const isLoggedIn = Auth.isLoggedIn();
     let hljsData = '';
 
     if (!loading) {
@@ -21,7 +25,6 @@ function SnippetDetail() {
             language: data.getSnippet.language,
             ignoreIllegals: true,
         });
-        // console.log(hljsData);
     }
 
     return (
@@ -33,8 +36,8 @@ function SnippetDetail() {
             ) : (
                 <>
                     <h2 className="display-3">{data.getSnippet.title}</h2>
-                    <p className="lead">{data.getSnippet.description}</p>
-                    <div className="card">
+                    <p className="lead mb-3">{data.getSnippet.description}</p>
+                    <div className="card mb-4">
                         <div className="card-header">
                             {data.getSnippet.language}
                         </div>
@@ -45,7 +48,10 @@ function SnippetDetail() {
                             <i class="bi bi-hand-thumbs-up-fill"></i>{data.getSnippet.like} <i class="bi bi-hand-thumbs-down-fill"></i>{data.getSnippet.dislike}
                         </div>
                     </div>
-
+                    {isLoggedIn ? (
+                        <CommentForm />
+                    ) : null}
+                    
                     {/* {data.getSnippet.isPublic ? (<p>Public</p>) : ('')} */}
                 </>
             )}
