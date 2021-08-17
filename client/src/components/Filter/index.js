@@ -39,10 +39,22 @@ function Filter() {
 
     return (
         <>
-            <ul className='list-group filterList'>
-                <h3 className=' list-group-item'>Filter</h3>
-                {languagesList}
-            </ul>
+            <div className='mainContent'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-3'>
+                            <ul className='list-group filterList'>
+                                <h3 className=' list-group-item'>Filter</h3>
+                                {languagesList}
+                            </ul>
+                        </div>
+
+                        <div className='col-9'>
+                            {/* Snippet Component here */}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
