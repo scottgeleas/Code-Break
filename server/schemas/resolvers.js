@@ -74,12 +74,21 @@ const resolvers = {
                 user: user,
             };
         },
-        createSnippet: async (parent, args) => {
-            const snippets = await Snippet.create(args);
-            if (!snippets) {
-                throw new AuthenticationError('Error! Cannot create snippets');
+        createSnippet: async (parent, args, context) => {
+            if (context.user) {
+                const snippet = await Snippet.create({
+                    ...args,
+                    author: context.user.username,
+                });
+
+                if (!snippet) {
+                    throw new AuthenticationError('Error! Cannot create snippets');
+                }
+
+                return snippet;
             }
-            return snippets;
+
+            throw new AuthenticationError('You must log in.');
         },
 
         createComment: async (parent, args) => {
