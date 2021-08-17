@@ -19,6 +19,7 @@ import Banner from './components/Banner/index';
 import Footer from './components/Footer/index';
 import Filter from './components/Filter/index';
 import SnippetDetail from './components/SnippetDetail';
+import SnippetCreateForm from './components/SnippetCreateForm';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -57,6 +58,9 @@ function App() {
                         </Route>
                         <Route path='/dashboard' exact>
                             <h1>Dashboard</h1>
+                            <div className="mb-4">
+                                <SnippetCreateForm />
+                            </div>
                             <Filter />
                         </Route>
                         <Route path='/signup' exact>
