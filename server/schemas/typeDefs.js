@@ -34,7 +34,7 @@ const typeDefs = gql`
 
     type Query {
         users: [User]
-        snippets: [Snippet]
+        getAllSnippets: [Snippet]
         comments: [Comment]
         getSnippet(id: ID!): Snippet
         getMe: User
