@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './css/index.css';
 
+import Snippet from '../Snippet/index';
+
 function Filter() {
     const [language, setLanguage] = useState('');
 
@@ -51,6 +53,7 @@ function Filter() {
 
                         <div className='col-9'>
                             {/* Snippet Component here */}
+                            <Snippet selectedLanguage={language} />
                         </div>
                     </div>
                 </div>
