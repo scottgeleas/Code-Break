@@ -19,7 +19,19 @@ const resolvers = {
             if (!snippet) {
                 throw new AuthenticationError('Error! Cannot retrieve snippet data.');
             }
+
             return snippet;
+        },
+        getMe: async (parent, args, context) => {
+            if (context.user) {
+                const user = await User.findOne({
+                    _id: context.user._id,
+                });
+
+                return user;
+            }
+
+            throw new AuthenticationError('You must log in.');
         },
     },
 
@@ -69,11 +81,13 @@ const resolvers = {
         },
 
         createComment: async (parent, args) => {
-            const comments = await Comment.create(args);
-            if (!comments) {
-                throw new AuthenticationError('Error! Cannot create comments');
+            const comment = await Comment.create(args);
+
+            if (!comment) {
+                throw new AuthenticationError('Error! Cannot create comment.');
             }
-            return comments;
+
+            return comment;
         },
     },
 };

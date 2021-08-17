@@ -1,3 +1,7 @@
+body{
+    background-color: #001633;
+  }
+
 .signupContainer{
     margin-top: 40px;
     max-width: 600px;
@@ -7,4 +11,19 @@
 
 .signupContainer .btn{
     margin-right: 20px;
+    background-color: #85d5e6;
+    color: #001633;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.form-label{
+    color:  #85d5e6!important;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 26px;
+}
+
+.mb-3{
+    font-family: 'Montserrat Alternates', sans-serif;
 }
