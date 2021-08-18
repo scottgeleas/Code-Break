@@ -2,9 +2,6 @@ import React from 'react';
 import './css/index.css';
 import auth from '../../utils/auth';
 
-
-
-
 export default function Nav() {
 
     return (
