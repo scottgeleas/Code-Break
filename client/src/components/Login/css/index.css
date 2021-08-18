@@ -24,3 +24,32 @@
 .mb-3{
     font-family: 'Montserrat Alternates', sans-serif;
 }
+
+@media (max-width:767px){
+    .loginContainer {
+        margin-top: 40px;
+        max-width: 200px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+   }
+
+   @media (max-width:767px){
+    .loginContainer .btn {
+        margin-right: 5px;
+       font-size: 14px;
+    }
+   }
+
+   @media (max-width:767px){
+    .form-label{
+        font-size: 16px;
+    }
+   }
+
+   @media (max-width:767px){
+    .form-control{
+        font-size: 10px;
+    }
+   }
+
