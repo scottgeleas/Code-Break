@@ -16,6 +16,7 @@ const typeDefs = gql`
 
     type Snippet {
         _id: ID!
+        author: String!
         title: String!
         description: String
         language: String!
