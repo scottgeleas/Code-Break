@@ -54,7 +54,7 @@ function SnippetCreateForm() {
         }
 
         try {
-            const { data } = await createSnippet({
+            await createSnippet({
                 variables: {
                     ...newSnippetState,
                 },

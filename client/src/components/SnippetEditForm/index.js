@@ -63,7 +63,7 @@ function SnippetEditFrom(props) {
         }
 
         try {
-            const { data } = await editSnippet({
+            await editSnippet({
                 variables: {
                     ...editedSnippetState,
                 },
