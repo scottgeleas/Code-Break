@@ -47,8 +47,8 @@ function SnippetDetail() {
                         <div className="card-body p-0">
                             <pre className="m-0"><code className={'hljs language-' + hljsData.language.toLowerCase()} dangerouslySetInnerHTML={{__html: hljsData.value}}></code></pre>
                         </div>
-                        <div class="card-footer">
-                            <i class="bi bi-hand-thumbs-up-fill"></i>{data.getSnippet.like} <i class="bi bi-hand-thumbs-down-fill"></i>{data.getSnippet.dislike}
+                        <div className="card-footer">
+                            <i className="bi bi-hand-thumbs-up-fill"></i>{data.getSnippet.like} <i className="bi bi-hand-thumbs-down-fill"></i>{data.getSnippet.dislike}
                         </div>
                     </div>
                     <CommentForm snippetId={data.getSnippet._id} />
