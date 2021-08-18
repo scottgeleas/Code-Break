@@ -46,7 +46,7 @@ function Filter() {
                     <div className='row'>
                         <div className='col-3'>
                             <ul className='list-group filterList'>
-                                <h3 className=' list-group-item'>Filter</h3>
+                                <h3 className=' list-group-item'>Language</h3>
                                 {languagesList}
                             </ul>
                         </div>

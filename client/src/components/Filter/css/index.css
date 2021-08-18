@@ -1,10 +1,16 @@
 .filterList {
     margin-left: 1rem;
     text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .filterList h3{
     margin: 0px;
     background-color: #0097a7;
-    color: #ffffff;
+    color: #001633;
+}
+
+.list-group-item {
+    background-color: #85d5e6;
+    color: #001633;
 }
