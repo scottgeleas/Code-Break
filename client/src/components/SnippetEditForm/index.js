@@ -59,7 +59,7 @@ function SnippetEditFrom(props) {
         if (!token) {
             document.location.assign('/login');
 
-            return false;
+            return;
         }
 
         try {
@@ -70,6 +70,7 @@ function SnippetEditFrom(props) {
             });
 
             document.querySelector('.js-close-edit-snippet-modal').click();
+            document.location.reload();
         } catch (err) {
             console.error(err);
         }
@@ -77,7 +78,7 @@ function SnippetEditFrom(props) {
 
     return (
         <>
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editSnippetModal">Edit Snippet</button>
+            <button type="button" className="btn btn-primary btn-sm snippet-action-btn" data-bs-toggle="modal" data-bs-target="#editSnippetModal">Edit</button>
 
             <div className="modal fade" id="editSnippetModal" tabIndex="-1" aria-labelledby="editSnippetModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered">

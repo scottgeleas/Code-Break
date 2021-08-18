@@ -37,6 +37,8 @@ function CommentForm() {
             setCommentState({
                 text: '',
             });
+
+            document.location.reload();
         } catch (err) {
             console.error(err);
         }

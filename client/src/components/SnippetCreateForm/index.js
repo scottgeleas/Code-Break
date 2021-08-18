@@ -69,6 +69,7 @@ function SnippetCreateForm() {
             });
 
             document.querySelector('.js-close-create-snippet-modal').click();
+            document.location.reload();
         } catch (err) {
             console.error(err);
         }
