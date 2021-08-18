@@ -47,6 +47,7 @@ const typeDefs = gql`
         createSnippet(title: String!, description: String, language: String!, code: String!, isPublic: Boolean): Snippet
         editSnippet(id: ID!, title: String!, description: String, language: String!, code: String!, isPublic: Boolean): Snippet
         createComment(author: String!, text: String!): Comment
+        removeSnippet(_id: ID!): Snippet
     }
 `;
 
