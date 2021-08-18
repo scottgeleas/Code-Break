@@ -5,7 +5,9 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         users: async () => User.find({}),
-        getAllSnippets: async () => Snippet.find({}),
+        getAllSnippets: async () => Snippet.find({}).populate(
+            'comments'
+        ),
         comments: async () => Comment.find({}),
         getSnippet: async (parent, args) => {
             const snippet = await Snippet.findById(args.id).populate(

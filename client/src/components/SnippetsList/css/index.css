@@ -1,0 +1,9 @@
+.snippets-list .likes-wrap {
+    text-align: right;
+    min-width: 100px;
+}
+
+.snippets-list .snippet-action-btn {
+    position: relative;
+    z-index: 10;
+}
