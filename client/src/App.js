@@ -20,7 +20,6 @@ import Footer from './components/Footer/index';
 import Filter from './components/Filter/index';
 import SnippetDetail from './components/SnippetDetail';
 import SnippetCreateForm from './components/SnippetCreateForm';
-import RemoveSnippet from './components/RemoveSnippet';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
