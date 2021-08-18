@@ -70,7 +70,6 @@ function SnippetEditFrom(props) {
             });
 
             document.querySelector('.js-close-edit-snippet-modal').click();
-            document.location.reload();
         } catch (err) {
             console.error(err);
         }
