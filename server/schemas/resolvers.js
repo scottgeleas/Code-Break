@@ -125,14 +125,33 @@ const resolvers = {
 
             throw new AuthenticationError('You must log in.');
         },
-        createComment: async (parent, args) => {
-            const comment = await Comment.create(args);
+        createComment: async (parent, args, context) => {
+            if (context.user) {
+                const comment = await Comment.create({
+                    text: args.text,
+                    author: context.user.username,
+                });
 
-            if (!comment) {
-                throw new AuthenticationError('Error! Cannot create comment.');
+                if (!comment) {
+                    throw new AuthenticationError('Error! Cannot create comment.');
+                }
+
+                await Snippet.findByIdAndUpdate({
+                    _id: args.snippetId,
+                },
+                {
+                    $addToSet: {
+                        comments: comment._id,
+                    },
+                },
+                {
+                    new: true,
+                });
+
+                return comment;
             }
 
-            return comment;
+            throw new AuthenticationError('You must log in.');
         },
 
         removeSnippet: async (parent, args, context) => {

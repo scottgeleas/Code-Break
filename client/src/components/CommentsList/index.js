@@ -1,32 +1,26 @@
 function CommentsList(props) {
     const { comments } = props;
 
-    let commentsHtml = '';
-
-    if (comments.length) {
-        commentsHtml = comments.map(item => {
-            return (
-                <div class="card mb-2">
-                    <div class="card-body">
-                        <p className="mb-1">{item.text}</p>
-                        <div className="d-flex w-100 justify-content-between">
-                            <small className="text-muted">{item.author}</small>
-                            <small className="text-muted">3 days ago</small>
-                        </div>
-                    </div>
-                </div>
-            );
-        })
-    } else {
-        commentsHtml = (
-            <p>No comments.</p>
-        );
-    }
-
     return (
         <>
             <h3 className="display-5">Comments</h3>
-            {commentsHtml}
+            {comments.length ? (
+                comments.map((item, index) => {
+                    return (
+                        <div className="card mb-2" key={index}>
+                            <div className="card-body">
+                                <p className="mb-1">{item.text}</p>
+                                <div className="d-flex w-100 justify-content-between">
+                                    <small className="text-muted">{item.author}</small>
+                                    {/* <small className="text-muted">3 days ago</small> */}
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })
+            ) : (
+                <p>No comments.</p>
+            )}
         </>
     );
 }

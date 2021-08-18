@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_SNIPPET } from '../../utils/queries';
 
-import Auth from '../../utils/auth';
 import CommentForm from '../CommentForm/index';
 import CommentsList from '../CommentsList/index';
 
@@ -18,7 +17,6 @@ function SnippetDetail() {
         },
     });
 
-    const isLoggedIn = Auth.isLoggedIn();
     let hljsData = '';
 
     if (!loading) {
@@ -53,9 +51,7 @@ function SnippetDetail() {
                             <i class="bi bi-hand-thumbs-up-fill"></i>{data.getSnippet.like} <i class="bi bi-hand-thumbs-down-fill"></i>{data.getSnippet.dislike}
                         </div>
                     </div>
-                    {isLoggedIn ? (
-                        <CommentForm />
-                    ) : null}
+                    <CommentForm snippetId={data.getSnippet._id} />
                     <CommentsList comments={data.getSnippet.comments}/>
                 </>
             )}

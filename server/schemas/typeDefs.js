@@ -46,7 +46,7 @@ const typeDefs = gql`
         loginUser(email: String!, password: String!): Auth
         createSnippet(title: String!, description: String, language: String!, code: String!, isPublic: Boolean): Snippet
         editSnippet(id: ID!, title: String!, description: String, language: String!, code: String!, isPublic: Boolean): Snippet
-        createComment(author: String!, text: String!): Comment
+        createComment(text: String!, snippetId: ID!): Comment
         removeSnippet(_id: ID!): Snippet
     }
 `;
