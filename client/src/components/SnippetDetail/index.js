@@ -32,14 +32,14 @@ function SnippetDetail() {
     }
 
     return (
-        <div className="container snippet-detail">
+        <div className="container-xxl snippet-detail">
             {loading ? (
                 <div className="spinner-border text-primary" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>
             ) : (
-                <div className="row ">
-                    <div className="col s12 m7 ">
+                <div className="row">
+                    <div className="col-12 col-lg-6 s12 m7 ">
                         <h3 className="" id="snippet-title">{data.getSnippet.title}</h3>
                         <div className="card mb-5" id="snippet-card">
                             <div className="card-header">
@@ -54,7 +54,7 @@ function SnippetDetail() {
                             </div>
                         </div>
                     </div>
-                    <div className="col s12 m5" tabIndex="0" id="comments">
+                    <div className="col-12 col-lg-6 s12 m5" tabIndex="0" id="comments">
                         <CommentForm snippetId={snippetId} />
                         <CommentsList comments={data.getSnippet.comments}/>
                     </div>

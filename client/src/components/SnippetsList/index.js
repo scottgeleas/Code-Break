@@ -42,7 +42,7 @@ function SnippetsList(props) {
                 </div>
             ) : (
                 snippetsList.length ? (
-                    <ul className="snippets-list " id="snippet-cards">
+                    <ul className="snippets-list p-0" id="snippet-cards">
                         {snippetsList.map((item, index) => {
                             return (
                                 <li className="card mb-3" key={index}>
@@ -74,7 +74,7 @@ function SnippetsList(props) {
                         })}
                     </ul>
                 ) : (
-                    <p>No Code Snippets.</p>
+                    <p className="info-message">No Code Snippets.</p>
                 )
             )}
         </>
