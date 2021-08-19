@@ -1,21 +1,25 @@
 
 .header1 {
-    color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px #85d5e6, 0 0 5px #0097a7;
+    /* color: white; */
+    color: #0097a7;
+    text-shadow: 1px 1px 1px black, 0 0 4px #85d5e6, 0 0 1px #0097a7;
     font-family: 'Montserrat Alternates', sans-serif;
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
     margin: auto;
     padding-bottom: 10px;
-  }
+    padding-top: 10px;
+}
 
   .description{
     width: 50%;
     font-family: 'Montserrat Alternates', sans-serif;
     text-align: center;
     font-size: 15px;
-    color: white;
     padding-bottom: 50px;
+    font-size: 25px;
+    /* color: white; */
+    color: #85d5e6;
     margin: auto;
 
   }

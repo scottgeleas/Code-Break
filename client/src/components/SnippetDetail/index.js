@@ -2,6 +2,7 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/vs2015.css';
 import './css/index.css';
 
+
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_SNIPPET } from '../../utils/queries';
