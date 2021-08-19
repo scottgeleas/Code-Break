@@ -1,6 +1,7 @@
 import hljs from 'highlight.js';
 import 'highlight.js/styles/vs2015.css';
 
+
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_SNIPPET } from '../../utils/queries';
@@ -38,8 +39,8 @@ function SnippetDetail() {
                 </div>
             ) : (
                 <>
-                    <h2 className="display-3">{data.getSnippet.title}</h2>
-                    <p className="lead mb-3">{data.getSnippet.description}</p>
+                    <h2 className="display-3 text-white">{data.getSnippet.title}</h2>
+                        <p className="lead mb-3 text-white">{data.getSnippet.description}</p>
                     <div className="card mb-5">
                         <div className="card-header">
                             {data.getSnippet.language}
