@@ -48,15 +48,19 @@ function App() {
                 <Banner />
                 <Switch>
                     <Route path='/' exact>
-                        <h1 className='page-title'>Homepage</h1>
-                        <Filter />
+                        <div className='container-xxl'>
+                            <h1 className='page-title'>Homepage</h1>
+                            <Filter />
+                        </div>
                     </Route>
                     <Route path='/dashboard' exact>
-                        <h1 className='page-title'>Dashboard</h1>
-                        <div className='mb-4'>
-                            <SnippetCreateForm />
+                        <div className='container-xxl'>
+                            <h1 className='page-title'>Dashboard</h1>
+                            <div className='mb-4'>
+                                <SnippetCreateForm />
+                            </div>
+                            <Filter />
                         </div>
-                        <Filter />
                     </Route>
                     <Route path='/signup' exact>
                         <Signup />

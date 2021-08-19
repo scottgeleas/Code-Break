@@ -4,7 +4,6 @@
 
 #snippet-title {
     color: #0097a7;
-    
 }
 
 #snippet-description {
@@ -13,12 +12,11 @@
 }
 
 #snippet-card {
-    
-    background-color: white;     
+    background-color: white;
 }
 
 #comments {
     overflow-y: auto;
     color: #0097a7;
-    height: 50rem;
+    max-height: 50rem;
 }

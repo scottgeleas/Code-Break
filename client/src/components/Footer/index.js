@@ -1,6 +1,5 @@
 import React from 'react';
 import './css/index.css';
-import auth from '../../utils/auth';
 import mini from '../Footer/images/mini.png';
 
 export default function Footer() {

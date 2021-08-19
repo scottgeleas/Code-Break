@@ -16,13 +16,12 @@ function CommentsList(props) {
                                     <small className="text-muted">{item.author}</small>
                                     {/* <small className="text-muted">3 days ago</small> */}
                                 </div>
-
                             </div>
                         </div>
                     );
                 })
             ) : (
-                <p>No comments.</p>
+                <p className="info-message">No comments.</p>
             )}
         </>
     );

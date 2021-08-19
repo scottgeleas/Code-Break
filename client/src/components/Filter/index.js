@@ -41,20 +41,16 @@ function Filter() {
 
     return (
         <>
-            <div className='mainContent'>
-                <div className='container'>
-                    <div className='row'>
-                        <div className='col-3'>
-                            <ul className='list-group filterList'>
-                                <h3 className=' list-group-item'>Language</h3>
-                                {languagesList}
-                            </ul>
-                        </div>
+            <div className='row'>
+                <div className='col-12 col-lg-3'>
+                    <ul className='list-group filterList mb-3'>
+                        <h3 className=' list-group-item'>Language</h3>
+                        {languagesList}
+                    </ul>
+                </div>
 
-                        <div className='col-9'>
-                            <SnippetsList languageFilter={language} />
-                        </div>
-                    </div>
+                <div className='col-12 col-lg-9'>
+                    <SnippetsList languageFilter={language} />
                 </div>
             </div>
         </>

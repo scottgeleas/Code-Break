@@ -1,6 +1,6 @@
 .container {
     margin: 0px;
-    padding: 0px; 
+    padding: 0px;
 }
 
 textarea.snippet-code-textarea {
@@ -9,6 +9,9 @@ textarea.snippet-code-textarea {
 
 .page-title {
     color: #ffab40;
-    margin-left: 20px;
     margin-bottom: 20px;
+}
+
+.info-message {
+    color: #0097a7;
 }

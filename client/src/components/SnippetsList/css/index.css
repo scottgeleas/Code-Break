@@ -10,5 +10,5 @@
 
 #snippet-cards {
     overflow-y: auto;
-    height: 35rem;
+    max-height: 35rem;
 }
