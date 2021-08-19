@@ -2,10 +2,6 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/vs2015.css';
 import './css/index.css';
 
-// import React, { Component } from 'react';
-// import { render } from 'react-dom';
-
-
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_SNIPPET } from '../../utils/queries';
@@ -13,7 +9,7 @@ import { GET_SNIPPET } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import CommentForm from '../CommentForm/index';
 import CommentsList from '../CommentsList/index';
-// import Filter from '../Filter/index'
+
 
 function SnippetDetail() {
     const { snippetId } = useParams();
@@ -54,7 +50,7 @@ function SnippetDetail() {
                         <div className="card mb-5" id="snippet-card">
                             <div className="card-header">
                             
-                        <p className="lead mb-3" id="snippet-description"> Description: {data.getSnippet.description}</p>
+                        <p className="lead mb-3" id="snippet-description">{data.getSnippet.description}</p>
                                 {data.getSnippet.language}
                             </div>
                             <div className="card-body p-0">

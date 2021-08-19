@@ -1,5 +1,5 @@
 #snippet-detail {
-    
+    height:100%;
 }
 
 #snippet-title {
@@ -18,8 +18,7 @@
 }
 
 #comments {
-    overflow-y: scroll;
+    overflow-y: auto;
     color: #0097a7;
-    /* height: ; */
+    height: 50rem;
 }
-
