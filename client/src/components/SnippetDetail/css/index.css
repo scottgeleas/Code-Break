@@ -1,0 +1,21 @@
+#snippet-title {
+    color: white;
+    font-size: 2em;
+}
+
+#snippet-description {
+    color: white;
+    font-size: 1em;
+}
+
+#snippet-card {
+    
+       
+}
+
+#comments {
+    margin-top: 6%;
+    overflow-y: scroll;
+    color: white;
+}
+
