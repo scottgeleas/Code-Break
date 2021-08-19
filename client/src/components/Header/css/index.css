@@ -10,6 +10,7 @@ body {
     width: 400px;
     height: auto;
     margin-left: 2%;
+    align-self: center;
 }
 
 @media (max-width: 767px) {
