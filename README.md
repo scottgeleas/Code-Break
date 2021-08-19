@@ -39,7 +39,7 @@ Code&lt;br> addresses the developer’s need to share, store, find reusable code
 
 This screen capture depicts our application's homepage.
 
-![Homepage](./client/public/homepage.jpg)
+![Homepage](./res/images/homepage.png)
 
 ## Key Features
 
