@@ -3,7 +3,7 @@ function CommentsList(props) {
 
     return (
         <>
-            <h3 className="display-5">Comments</h3>
+            <h3 className="display-5 text-white">Comments</h3>
             {comments.length ? (
                 comments.map((item, index) => {
                     return (
