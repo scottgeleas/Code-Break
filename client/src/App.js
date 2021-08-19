@@ -12,7 +12,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/index';
-import Nav from './components/Nav/index';
 import Signup from './components/Signup/index';
 import Login from './components/Login/index';
 import Banner from './components/Banner/index';

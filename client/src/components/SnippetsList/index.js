@@ -17,11 +17,11 @@ function SnippetsList(props) {
     const { pathname } = useLocation();
     const isDashboard = pathname.includes('dashboard')
 
-    if ((!snippetsLoading && snippetsData)
-    && (!userLoading && userData)) {
+    if (!snippetsLoading && snippetsData) {
         snippetsList = snippetsData.getAllSnippets;
 
-        if (isDashboard) {
+        if (isDashboard
+        && (!userLoading && userData)) {
             snippetsList = snippetsList.filter(item => {
                 return item.author === userData.getMe.username;
             });

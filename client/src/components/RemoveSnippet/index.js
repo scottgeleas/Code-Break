@@ -17,7 +17,7 @@ function RemoveSnippet(props) {
         }
 
         try {
-            const { data } = await removeSnippet({
+            await removeSnippet({
                 variables: {
                     _id: props.snippetId,
                 },

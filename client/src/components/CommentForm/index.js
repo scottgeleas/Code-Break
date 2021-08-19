@@ -1,16 +1,17 @@
 import { useState } from 'react';
 
-import { useMutation, useQuery } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import { CREATE_COMMENT } from '../../utils/mutations';
-import { GET_ME } from '../../utils/queries';
 
-function CommentForm() {
+import Auth from '../../utils/auth';
+
+function CommentForm(props) {
     const [commentState, setCommentState] = useState({
         text: '',
     });
 
-    const {loading, data} = useQuery(GET_ME);
-    const userData = data?.getMe || {};
+    const { snippetId } = props;
+    const isLoggedIn = Auth.isLoggedIn();
 
     const [createComment] = useMutation(CREATE_COMMENT);
 
@@ -26,11 +27,19 @@ function CommentForm() {
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
+        const token = isLoggedIn ? Auth.getStorageToken() : null;
+
+        if (!token) {
+            document.location.assign('/login');
+
+            return false;
+        }
+
         try {
             await createComment({
                 variables: {
-                    commentAuthor: userData.username,
-                    commentText: commentState.text
+                    commentText: commentState.text,
+                    snippetId: snippetId,
                 },
             });
 
@@ -45,10 +54,8 @@ function CommentForm() {
     }
 
     return (
-        <div className="commentContainer mb-4">
-            {loading ? (
-                <p>Loading...</p>
-            ) : (
+        <div className="commentFormContainer mb-4">
+            {isLoggedIn ? (
                 <form onSubmit={handleFormSubmit}>
                     <div className="mb-3">
                         <label htmlFor="commentText" className="form-label">Add Your Comment</label>
@@ -65,6 +72,8 @@ function CommentForm() {
                     </div>
                     <button type="submit" className="btn btn-primary">Add Comment</button>
                 </form>
+            ) : (
+                <p>To be able leave a comment, user must be <a href="/login">logged in</a>.</p>
             )}
         </div>
     );

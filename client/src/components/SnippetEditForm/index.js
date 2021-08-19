@@ -63,13 +63,13 @@ function SnippetEditFrom(props) {
         }
 
         try {
-            const { data } = await editSnippet({
+            await editSnippet({
                 variables: {
                     ...editedSnippetState,
                 },
             });
 
-            document.querySelector('.js-close-edit-snippet-modal').click();
+            document.querySelector(`#editSnippet${editedSnippetState.id}Modal .js-close-edit-snippet-modal`).click();
         } catch (err) {
             console.error(err);
         }
@@ -77,23 +77,23 @@ function SnippetEditFrom(props) {
 
     return (
         <>
-            <button type="button" className="btn btn-primary btn-sm snippet-action-btn" data-bs-toggle="modal" data-bs-target="#editSnippetModal">Edit</button>
+            <button type="button" className="btn btn-primary btn-sm snippet-action-btn" data-bs-toggle="modal" data-bs-target={`#editSnippet${editedSnippetState.id}Modal`}>Edit</button>
 
-            <div className="modal fade" id="editSnippetModal" tabIndex="-1" aria-labelledby="editSnippetModalLabel" aria-hidden="true">
+            <div className="modal fade" id={`editSnippet${editedSnippetState.id}Modal`} tabIndex="-1" aria-labelledby={`editSnippet${editedSnippetState.id}Label`} aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="editSnippetModalLabel">Edit Snippet</h5>
+                            <h5 className="modal-title" id={`editSnippet${editedSnippetState.id}Label`}>Edit Snippet</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <form onSubmit={handleFormSubmit} id="edit-form">
                             <div className="modal-body">
                                 <div className="mb-3">
-                                    <label htmlFor="snippetTitle" className="form-label">Title</label>
+                                    <label htmlFor={`snippetTitle${editedSnippetState.id}`} className="form-label">Title</label>
                                     <input
                                         type="text"
                                         className="form-control"
-                                        id="snippetTitle"
+                                        id={`snippetTitle${editedSnippetState.id}`}
                                         name="title"
                                         required="required"
                                         value={editedSnippetState.title}
@@ -101,21 +101,21 @@ function SnippetEditFrom(props) {
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="snippetDescription" className="form-label">Description</label>
+                                    <label htmlFor={`snippetDescription${editedSnippetState.id}`} className="form-label">Description</label>
                                     <textarea
                                         type="text"
                                         className="form-control"
-                                        id="snippetDescription"
+                                        id={`snippetDescription${editedSnippetState.id}`}
                                         name="description"
                                         value={editedSnippetState.description}
                                         onChange={handleChange}
                                     ></textarea>
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="snippetLanguage" className="form-label">Language</label>
+                                    <label htmlFor={`snippetLanguage${editedSnippetState.id}`} className="form-label">Language</label>
                                     <select
                                         className="form-select"
-                                        id="snippetLanguage"
+                                        id={`snippetLanguage${editedSnippetState.id}`}
                                         name="language"
                                         aria-label="Snippet language"
                                         required="required"
@@ -131,11 +131,11 @@ function SnippetEditFrom(props) {
                                     </select>
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="snippetCode" className="form-label">Code</label>
+                                    <label htmlFor={`snippetCode${editedSnippetState.id}`} className="form-label">Code</label>
                                     <textarea
                                         type="text"
                                         className="form-control snippet-code-textarea"
-                                        id="snippetCode"
+                                        id={`snippetCode${editedSnippetState.id}`}
                                         name="code"
                                         required="required"
                                         value={editedSnippetState.code}
@@ -146,12 +146,12 @@ function SnippetEditFrom(props) {
                                     <input
                                         className="form-check-input"
                                         type="checkbox"
-                                        id="snippetIsPublic"
+                                        id={`snippetIsPublic${editedSnippetState.id}`}
                                         name="isPublic"
                                         checked={editedSnippetState.isPublic}
                                         onChange={handleChange}
                                     />
-                                    <label className="form-check-label" htmlFor="snippetIsPublic">Make snippet public</label>
+                                    <label className="form-check-label" htmlFor={`snippetIsPublic${editedSnippetState.id}`}>Make snippet public</label>
                                 </div>
                             </div>
                             <div className="modal-footer">

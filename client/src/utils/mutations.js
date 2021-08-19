@@ -31,8 +31,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const CREATE_COMMENT = gql`
-    mutation createComment($commentAuthor: String!, $commentText: String!) {
-        createComment(author: $commentAuthor, text: $commentText) {
+    mutation createComment($commentText: String!, $snippetId: ID!) {
+        createComment(text: $commentText, snippetId: $snippetId) {
             _id
             author
             text
