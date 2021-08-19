@@ -10,7 +10,7 @@ import { GET_SNIPPET } from '../../utils/queries';
 import Auth from '../../utils/auth';
 import CommentForm from '../CommentForm/index';
 import CommentsList from '../CommentsList/index';
-import Filter from '../Filter/index'
+// import Filter from '../Filter/index'
 
 function SnippetDetail() {
     const { snippetId } = useParams();
@@ -44,9 +44,6 @@ function SnippetDetail() {
                 </div>
             ) : (
                 <div class="row">
-                    {/* <div class="col s12 m4" id="filter">
-                        <Filter />
-                    </div> */}
                     <div class="col s12 m7">
                         <h2 className="display-3" id="snippet-title">{data.getSnippet.title}</h2>
                         <p className="lead mb-3" id="snippet-description">{data.getSnippet.description}</p>
@@ -62,7 +59,7 @@ function SnippetDetail() {
                             </div>
                         </div>
                     </div>
-                    <div class="col s12 m5" tabIndex="0" id="comments">    
+                    <div class="col s12 m" tabIndex="0" id="comments">    
                         {isLoggedIn ? (
                             <CommentForm />
                         ) : null}

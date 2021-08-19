@@ -16,6 +16,7 @@
 #comments {
     margin-top: 6%;
     overflow-y: scroll;
-    color: white;
+    color: rgb(150, 41, 41);
+    /* height: ; */
 }
 

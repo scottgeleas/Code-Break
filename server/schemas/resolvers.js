@@ -5,10 +5,14 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         users: async () => User.find({}),
-        getAllSnippets: async () => Snippet.find({}),
+        getAllSnippets: async () => Snippet.find({}).populate(
+            'comments'
+        ),
         comments: async () => Comment.find({}),
         getSnippet: async (parent, args) => {
-            const snippet = await Snippet.findById(args.id).populate('comments');
+            const snippet = await Snippet.findById(args.id).populate(
+                'comments'
+            );
 
             if (!snippet) {
                 throw new AuthenticationError(
@@ -82,7 +86,9 @@ const resolvers = {
                 });
 
                 if (!snippet) {
-                    throw new AuthenticationError('Error! Cannot create snippets');
+                    throw new AuthenticationError(
+                        'Error! Cannot create snippets'
+                    );
                 }
 
                 return snippet;
@@ -92,20 +98,26 @@ const resolvers = {
         },
         editSnippet: async (parent, args, context) => {
             if (context.user) {
-                const snippet = await Snippet.findOneAndUpdate({
-                    _id: args.id,
-                }, {
-                    title: args.title,
-                    description: args.description,
-                    language: args.language,
-                    code: args.code,
-                    isPublic: args.isPublic,
-                }, {
-                    new: true,
-                });
+                const snippet = await Snippet.findOneAndUpdate(
+                    {
+                        _id: args.id,
+                    },
+                    {
+                        title: args.title,
+                        description: args.description,
+                        language: args.language,
+                        code: args.code,
+                        isPublic: args.isPublic,
+                    },
+                    {
+                        new: true,
+                    }
+                );
 
                 if (!snippet) {
-                    throw new AuthenticationError('Error! Cannot update snippet.');
+                    throw new AuthenticationError(
+                        'Error! Cannot update snippet.'
+                    );
                 }
 
                 return snippet;
@@ -113,14 +125,50 @@ const resolvers = {
 
             throw new AuthenticationError('You must log in.');
         },
-        createComment: async (parent, args) => {
-            const comment = await Comment.create(args);
+        createComment: async (parent, args, context) => {
+            if (context.user) {
+                const comment = await Comment.create({
+                    text: args.text,
+                    author: context.user.username,
+                });
 
-            if (!comment) {
-                throw new AuthenticationError('Error! Cannot create comment.');
+                if (!comment) {
+                    throw new AuthenticationError('Error! Cannot create comment.');
+                }
+
+                await Snippet.findByIdAndUpdate({
+                    _id: args.snippetId,
+                },
+                {
+                    $addToSet: {
+                        comments: comment._id,
+                    },
+                },
+                {
+                    new: true,
+                });
+
+                return comment;
             }
 
-            return comment;
+            throw new AuthenticationError('You must log in.');
+        },
+
+        removeSnippet: async (parent, args, context) => {
+            if (context.user) {
+                const snippet = await Snippet.findOneAndDelete({
+                    _id: args._id,
+                    author: context.user.username,
+                });
+
+                if (!snippet) {
+                    throw new AuthenticationError('No snippet found');
+                }
+
+                return snippet;
+            }
+
+            throw new AuthenticationError('You must log in.');
         },
     },
 };

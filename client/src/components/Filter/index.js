@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import './css/index.css';
 
+import SnippetsList from '../SnippetsList';
+
 function Filter() {
     const [language, setLanguage] = useState('');
 
     const filterResults = (event) => {
         const selected = event.currentTarget.dataset.language;
-        console.log(selected);
+
         setLanguage(selected);
     };
 
@@ -44,14 +46,13 @@ function Filter() {
                     <div className='row'>
                         <div className='col-3'>
                             <ul className='list-group filterList'>
-                                <h3 className=' list-group-item'>Filter</h3>
+                                <h3 className=' list-group-item'>Language</h3>
                                 {languagesList}
                             </ul>
                         </div>
 
                         <div className='col-9'>
-                            {/* Snippet Component here */}
-                            
+                            <SnippetsList languageFilter={language} />
                         </div>
                     </div>
                 </div>

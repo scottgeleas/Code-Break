@@ -6,10 +6,17 @@ export const GET_ALL_SNIPPETS = gql`
             _id
             title
             description
+            author
             language
             like
             dislike
             isPublic
+            code
+            comments {
+                _id
+                author
+                text
+            }
         }
     }
 `;
