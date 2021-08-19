@@ -6,3 +6,9 @@
 textarea.snippet-code-textarea {
     min-height: calc(9em + .75rem + 2px);
 }
+
+.page-title {
+    color: #ffab40;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
