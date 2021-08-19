@@ -48,11 +48,11 @@ function App() {
                 <Banner />
                 <Switch>
                     <Route path='/' exact>
-                        <h1>Homepage</h1>
+                        <h1 className='page-title'>Homepage</h1>
                         <Filter />
                     </Route>
                     <Route path='/dashboard' exact>
-                        <h1>Dashboard</h1>
+                        <h1 className='page-title'>Dashboard</h1>
                         <div className='mb-4'>
                             <SnippetCreateForm />
                         </div>
