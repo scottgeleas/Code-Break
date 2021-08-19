@@ -1,0 +1,24 @@
+#snippet-detail {
+    height:100%;
+}
+
+#snippet-title {
+    color: #0097a7;
+    
+}
+
+#snippet-description {
+    color: #0097a7;
+    font-size: 1em;
+}
+
+#snippet-card {
+    
+    background-color: white;     
+}
+
+#comments {
+    overflow-y: auto;
+    color: #0097a7;
+    height: 50rem;
+}

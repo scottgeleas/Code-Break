@@ -7,18 +7,18 @@
     font-size: 35px;
     text-align: center;
     margin: auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
 
   .description{
     width: 50%;
     font-family: 'Montserrat Alternates', sans-serif;
     text-align: center;
+    padding-bottom: 50px;
     font-size: 25px;
     /* color: white; */
     color: #85d5e6;
-    padding-bottom: 100px;
     margin: auto;
 
   }
