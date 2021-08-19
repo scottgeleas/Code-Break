@@ -11,7 +11,7 @@ export default function Banner() {
          </div>
         
          <div>
-         <p className='description'>Code {`<br>`} addresses the developer's need to share, store, and find reusable code snippets to reduce development time</p>
+         <p className='description'>Code {`<br>`} addresses the developer's need to share, store, and find reusable code snippets to reduce development time.</p>
         </div>
 
         </>
