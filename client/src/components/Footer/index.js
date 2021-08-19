@@ -11,9 +11,9 @@ export default function Footer() {
         <div className="footer-container">
             <ul className="foot">
                 
-                <li className="nav-item">
+                {/* <li className="nav-item">
                     <a className="nav-link" href="/">Homepage</a>
-                </li>
+                </li> */}
 
                 {auth.isLoggedIn() ? (
 
@@ -32,9 +32,9 @@ export default function Footer() {
                     : (
                         <>
 
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <a className="nav-link" href="/login">Login</a>
-                            </li>
+                            </li> */}
                             {/* <li className="nav-item">
                                             <a className="nav-link" href="/signup">Signup</a>
                                         </li> */}
@@ -44,7 +44,11 @@ export default function Footer() {
 
             </ul>
 
-            <img id='mini' src={mini} alt="logo" />
+             <li className="nav-item">
+                    <a className="nav-link" href="/"><img id='mini' src={mini} alt="logo" /></a>
+                </li>
+
+            
         </div>
         
     )
